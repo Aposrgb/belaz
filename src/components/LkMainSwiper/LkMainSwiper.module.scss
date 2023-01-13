@@ -4,7 +4,7 @@
   display: flex;
   align-items: center;
   @include fluid(margin-bottom, 10px, 20px);
-  
+
 }
 .title{
   @include fluid(font-size,18px, 20px);
@@ -62,7 +62,7 @@
   justify-content: center;
 }
 .arrow{
-  background: url("../../assets/swiperArrow.svg") no-repeat;
+  background: url("../../assets/svg/swiperArrow.svg") no-repeat;
   width: 15px;
   height: 30px;
   @include fluid(height, 20px, 30px);

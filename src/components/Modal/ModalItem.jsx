@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Button, Modal } from "antd";
 import style from "./Modal.module.scss";
-import ModalRegistr from "./ModalRegistr.jsx";
+import ModalRegister from "./ModalRegister.jsx";
 import ModalAuto from "./ModalAuto.jsx";
 const ModalItem = (props) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -34,7 +34,7 @@ const ModalItem = (props) => {
         footer={false}
       >
         {registr ? (
-          <ModalRegistr registrathion={registrathion} />
+          <ModalRegister registrathion={registrathion} />
         ) : (
           <ModalAuto autorize={autorize} />
         )}

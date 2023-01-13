@@ -1,6 +1,6 @@
 import React from "react";
 import style from "./AskMini.module.scss";
-import ask from "../../assets/ask.png";
+import ask from "../../assets/images/ask.png";
 import { NavLink } from "react-router-dom";
 const AskMini = (props) => {
   return (

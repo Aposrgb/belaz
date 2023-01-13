@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import style from "./Modal.module.scss";
 import { Registration } from "../../api/security";
-const ModalRegistr = (props) => {
+const ModalRegister = (props) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
@@ -81,7 +81,7 @@ const ModalRegistr = (props) => {
             Reg(email, password, name, surname, patronymic, phone);
           }}
         >
-          Зарегестрироваться
+          Зарегистрироваться
         </button>
       </form>
       <div className={style.linkModal} onClick={props.registrathion}>
@@ -90,4 +90,4 @@ const ModalRegistr = (props) => {
     </div>
   );
 };
-export default ModalRegistr;
+export default ModalRegister;

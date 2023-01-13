@@ -1,7 +1,7 @@
 import React from 'react';
 import style from "../Basket/Basket.module.scss";
 import {Checkbox} from "antd";
-import star from "../../assets/star.svg";
+import star from "../../assets/svg/star.svg";
 import Counter from "../Counter/Counter.jsx";
 
 const OrderProductItem = (props) => {

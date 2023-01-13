@@ -1,8 +1,8 @@
 import React from "react";
 import Benefits from "../components/Benefits/Benefits";
-import NewsForm from "../components/News/NewsForm.jsx";
 import HomeBunner from "../components/HomeBanner/HomeBunner.jsx";
-import {GetSearch} from "../store/slice/searcSlice.js";
+import NewsForm from "../components/News/NewsForm.jsx";
+
 const Main = (props) => {
   return (
     <div>

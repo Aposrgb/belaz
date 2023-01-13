@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import style from "./DetailProduct.module.scss";
 import Counter from "../Counter/Counter.jsx";
-import star from "../../assets/star.svg";
-import favorite from "../../assets/favorite.svg";
+import star from "../../assets/svg/star.svg";
+import favorite from "../../assets/svg/favorite.svg";
 export default function DetailProduct(props) {
   const [count, setCount] = useState(0);
 

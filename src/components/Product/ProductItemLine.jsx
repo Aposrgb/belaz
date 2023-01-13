@@ -1,9 +1,9 @@
 import React from "react";
 import style from "./Product.module.scss";
-import star from "../../assets/star.svg";
-import buy from "../../assets/buy.svg";
-import favorite from "../../assets/favorite.svg";
-import picture from "../../assets/nullPicture.png";
+import star from "../../assets/svg/star.svg";
+import buy from "../../assets/svg/buy.svg";
+import favorite from "../../assets/svg/favorite.svg";
+import picture from "../../assets/images/nullPicture.png";
 import { Link } from "react-router-dom";
 const ProductItemLine = (props) => {
   return (

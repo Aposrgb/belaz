@@ -6,10 +6,10 @@ import OrderDelivery from "./OrderDelivery.jsx";
 import {NavLink} from "react-router-dom";
 import Title from "../Title/Title.jsx";
 import Product from "../Product/Product.jsx";
-import truck from "../../assets/truck.svg"
-import mail from "../../assets/mailSend.svg"
-import marker from "../../assets/marker.svg"
-import delivery from "../../assets/delivery-parcel.svg"
+import truck from "../../assets/svg/truck.svg"
+import mail from "../../assets/svg/mailSend.svg"
+import marker from "../../assets/svg/marker.svg"
+import delivery from "../../assets/svg/delivery-parcel.svg"
 import OrderProductItem from "./OrderProductItem.jsx";
 
 const Order = (props) => {

@@ -1,6 +1,6 @@
 import React from 'react';
 import style from "./Basket.module.scss"
-import basket from "../../assets/shopping.svg"
+import basket from "../../assets/svg/shopping.svg"
 import {NavLink} from "react-router-dom";
 const BasketNotFound = () => {
     return (

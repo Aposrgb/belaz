@@ -1,6 +1,6 @@
 import React from 'react';
 import style from "./News.module.scss"
-import back from "../../assets/newsBack.png"
+import back from "../../assets/images/newsBack.png"
 const NewsForm = (props) => {
     return (
         <div className={style.block}>

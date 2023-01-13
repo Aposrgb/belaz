@@ -39,7 +39,7 @@
 .tabs{
   display: flex;
   align-items: center;
-  
+
 }
 .tab{
   @include fluid(font-size,12px, 14px);
@@ -74,7 +74,7 @@
   align-items: center;
 justify-content: center;
   img{
-    background: url("../../assets/newsIcon.svg");
+    background: url("../../assets/svg/newsIcon.svg");
     @include fluid(width, 12px, 15px);
     @include fluid(height, 12px, 15px);
     background-position: center;

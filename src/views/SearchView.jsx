@@ -1,29 +1,31 @@
-import React, {useEffect} from 'react';
+import React, { useEffect } from 'react';
 import Preloader from "../components/Preloader/Preloader";
 import SearchContent from "../components/SearchContent/SearchContent.jsx";
-import {useParams, useLocation} from "react-router-dom";
+import { useParams, useLocation } from "react-router-dom";
 import Search from "../components/Search/Search.jsx"
+import { useDisableScroll } from "../hooks/useDisableScroll.js";
 
 const SearchView = (props) => {
-    let  id  = useParams();
-    useEffect(() => {
-        props.GetSearch(1, 20,id.id);
-    }, []);
-    return (
-        <div className="content">
-            {props.searchLoader?<Preloader/>:""}
-            <Search GetSearch={props.GetSearch}/>
-            <SearchContent
-                GetSearch={props.GetSearch}
-                product={props.search}
-                filter={props.filter}
-                GetFilter={props.GetFilter}
-            />
+  let id = useParams();
+  useEffect(() => {
+    props.GetSearch(1, 20, id.id);
+  }, []);
+
+  useDisableScroll(props.searchLoader)
+  return (
+    <div className="content">
+      { props.searchLoader ? <Preloader/> : "" }
+      <Search GetSearch={ props.GetSearch }/>
+      <SearchContent
+        GetSearch={ props.GetSearch }
+        product={ props.search }
+        filter={ props.filter }
+        GetFilter={ props.GetFilter }
+      />
 
 
-
-        </div>
-    );
+    </div>
+  );
 };
 
 export default SearchView;

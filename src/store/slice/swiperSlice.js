@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import img from "../../assets/slide 3.png"
+import img from "../../assets/images/slide 3.png"
 const initialState = {
     slide: [
         {

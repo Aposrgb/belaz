@@ -1,6 +1,6 @@
 import React from "react";
 import style from "./Preloader.module.scss";
-import icon from "../../assets/loader.svg";
+import icon from "../../assets/svg/loader.svg";
 export default function Preloader() {
   return (
     <div className={style.block}>

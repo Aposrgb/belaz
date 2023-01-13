@@ -1,6 +1,6 @@
 import React from 'react';
 import style from "./Title.module.scss"
-import arrow from "../../assets/titleArrow.svg"
+import arrow from "../../assets/svg/titleArrow.svg"
 import {NavLink} from "react-router-dom";
 const Title = (props) => {
     return (

@@ -1,6 +1,6 @@
 import React from 'react';
 import style from "./LkDelivery.module.scss";
-import order from "../../../assets/order.svg"
+import order from "../../../assets/svg/order.svg"
 const LkDeliveryItem = (props) => {
     return (
         <div className={style.order}>

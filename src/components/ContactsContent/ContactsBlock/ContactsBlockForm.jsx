@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import style from "./ContactsBlock.module.scss";
 import { Checkbox } from "antd";
-import gear from "../../../assets/gear.svg";
+import gear from "../../../assets/svg/gear.svg";
 const ContactsBlockForm = (props) => {
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");

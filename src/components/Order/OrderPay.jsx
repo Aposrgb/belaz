@@ -1,6 +1,6 @@
 import React from 'react';
 import style from "./Order.module.scss"
-import cardholder from "../../assets/openmoneybox.svg"
+import cardholder from "../../assets/svg/openmoneybox.svg"
 import {Checkbox, Input} from "antd";
 const OrderPay = (props) => {
     return (

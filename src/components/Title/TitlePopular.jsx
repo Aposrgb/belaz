@@ -1,6 +1,6 @@
 import React from 'react';
 import style from "./Title.module.scss";
-import popular from "../../assets/popular.svg";
+import popular from "../../assets/svg/popular.svg";
 
 const TitlePopular = () => {
     return (

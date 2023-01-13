@@ -3,6 +3,7 @@ import Search from "../components/Search/Search.jsx";
 import BreadcrumbRecomendate from "../components/Breadcrumb/BreadcrumbRecomendate.jsx";
 import ProductRecomend from "../components/Product/ProductRecomend.jsx";
 import Preloader from "../components/Preloader/Preloader.jsx";
+import { useDisableScroll } from "../hooks/useDisableScroll.js";
 import { GetRecommendFiltered } from "../store/slice/recommendSlice.js";
 import {GetSearch} from "../store/slice/searcSlice.js";
 
@@ -11,6 +12,8 @@ const Recommend = (props) => {
     props.GetRecommends(1, 20);
     props.GetFilter();
   }, []);
+
+  useDisableScroll(props.recommendLoading)
 
   return (
     <div className="content">

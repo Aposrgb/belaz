@@ -1,8 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
-import adress from "../../assets/adress.svg";
-import mail from "../../assets/mail.svg";
-import phone from "../../assets/phone.svg";
-import mode from "../../assets/mode.svg";
+import adress from "../../assets/svg/adress.svg";
+import mail from "../../assets/svg/mail.svg";
+import phone from "../../assets/svg/phone.svg";
+import mode from "../../assets/svg/mode.svg";
 import {GetAllHelp} from "../../api/help.js";
 import {helpSlice} from "./helpSlice.js";
 import {GetAllContacts} from "../../api/contact.js";

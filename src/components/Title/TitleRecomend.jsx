@@ -1,6 +1,6 @@
 import React from 'react';
 import style from "./Title.module.scss";
-import like from "../../assets/like.svg";
+import like from "../../assets/svg/like.svg";
 
 const TitleRecomend = () => {
     return (

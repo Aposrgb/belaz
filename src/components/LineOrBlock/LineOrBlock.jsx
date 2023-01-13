@@ -1,7 +1,7 @@
 import React from 'react';
 import style from "../Category/Category.module.scss"
-import stroke from "../../assets/stroke.svg"
-import bloke from "../../assets/bloke.svg"
+import stroke from "../../assets/svg/stroke.svg"
+import bloke from "../../assets/svg/bloke.svg"
 const LineOrBlock = (props) => {
     return (
         <div className={style.flex}>
