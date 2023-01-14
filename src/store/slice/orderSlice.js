@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import product from "../../assets/product.svg";
+import product from "../../assets/svg/product.svg";
 const initialState = {
     orders: [
         {

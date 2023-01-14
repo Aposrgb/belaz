@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {Checkbox, Input} from "antd";
 import style from "./Basket.module.scss"
-import star from "../../assets/star.svg"
+import star from "../../assets/svg/star.svg"
 import Counter from "../Counter/Counter.jsx";
 const BasketItem = (props) => {
 

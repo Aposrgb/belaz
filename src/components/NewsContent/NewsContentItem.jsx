@@ -1,6 +1,6 @@
 import React from 'react';
 import style from "./NewsContent.module.scss"
-import share from "../../assets/share.svg"
+import share from "../../assets/svg/share.svg"
 import {NavLink} from "react-router-dom";
 const NewsContentItem = (props) => {
 

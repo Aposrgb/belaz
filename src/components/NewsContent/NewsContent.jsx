@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
-import newsIcon from "../../assets/newsIcon.svg"
+import newsIcon from "../../assets/svg/newsIcon.svg"
 import style from "./NewsContent.module.scss"
 import NewsContentItem from "./NewsContentItem.jsx";
 import ContactsMin from "../ContactsMini/ContactsMin.jsx";

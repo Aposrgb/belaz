@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import style from "./Modal.module.scss";
-import logo from "../../assets/logoModal.svg";
+import logo from "../../assets/svg/logoModal.svg";
 import ModalItem from "./ModalItem";
 import { Autorize } from "../../api/security.js";
 const ModalAuto = (props) => {
@@ -15,7 +15,7 @@ const ModalAuto = (props) => {
       <img src={logo} className={style.logo} />
       <div className={style.title}>Введите логин и пароль</div>
       <div className={style.text}>
-        Или зарегестрируйтесь, если Вы здесь впервые
+        Или зарегистрируйтесь, если Вы здесь впервые
       </div>
       <form className={style.form}>
         <div className={style.input}>

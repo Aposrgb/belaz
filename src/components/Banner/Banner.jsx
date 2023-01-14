@@ -1,7 +1,7 @@
 import React from 'react';
 import style from "./Banner.module.scss"
-import greenBanner from "../../assets/greenBanner.png"
-import blueBanner from "../../assets/blueBanner.png"
+import greenBanner from "../../assets/images/greenBanner.png"
+import blueBanner from "../../assets/images/blueBanner.png"
 const Banner = (props) => {
     return (
         <div className={props.green?`${style.flexGreen}`:`${style.flexBlue}`}>

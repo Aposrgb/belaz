@@ -2,6 +2,7 @@ import React, {useEffect} from 'react';
 import Search from "../components/Search/Search.jsx";
 import ProductPopular from "../components/Product/ProductPopular.jsx";
 import Preloader from '../components/Preloader/Preloader.jsx';
+import { useDisableScroll } from "../hooks/useDisableScroll.js";
 import {GetSearch} from "../store/slice/searcSlice.js";
 
 
@@ -15,6 +16,8 @@ const Popular = (props) => {
         props.GetFilter()
 
     }, [])
+
+  useDisableScroll(props.popularLoading)
 
 
     return (

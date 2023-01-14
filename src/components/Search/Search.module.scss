@@ -1,40 +1,49 @@
 @import "../../style/Mixins.scss";
 
-.flex{
-  display: flex;
-  align-items: center;
-  @include fluid(margin-top, 15px, 30px);
-  @include fluid(margin-bottom, 15px, 30px);
+.flex {
+    display: flex;
+    align-items: center;
+    border: 1px solid #CCCCCC;
+    border-radius: 5px;
+    @include fluid(margin-top, 15px, 30px);
+    @include fluid(margin-bottom, 15px, 30px);
 
 }
-.input{
-  @include fluid(padding-top, 12px, 14px);
-  @include fluid(padding-bottom, 12px, 14px);
-  @include fluid(padding-left, 15px, 27px);
-  flex-grow: 1;
-  border: 1px solid #CCCCCC;
-  border-top-left-radius: 5px;
-  border-bottom-left-radius: 5px;
-  @include fluid(font-size,12px, 14px);
-  outline: none;
-  &::placeholder{
-    color: #CCCCCC;
-  }
+
+.input {
+    @include fluid(padding-top, 12px, 14px);
+    @include fluid(padding-bottom, 12px, 14px);
+    @include fluid(padding-left, 15px, 27px);
+    flex-grow: 1;
+    //border: 1px solid #CCCCCC;
+    //border-top-left-radius: 5px;
+    //border-bottom-left-radius: 5px;
+    border-radius: 5px 0 0 5px;
+    border: none;
+    @include fluid(font-size, 12px, 14px);
+    outline: none;
+
+    &::placeholder {
+        color: #CCCCCC;
+    }
 }
-.button{
-  @include fluid(padding-left, 31px, 63px);
-  @include fluid(padding-right, 31px, 63px);
-  @include fluid(padding-top, 12px, 14px);
-  @include fluid(padding-bottom, 12px, 14px);
-  background: #E6E6E6;
-  border-top-right-radius: 5px;
-  border: 1px solid #CCCCCC;
-  border-bottom-right-radius: 5px;
-  cursor: pointer;
+
+.button {
+    @include fluid(padding-left, 31px, 63px);
+    @include fluid(padding-right, 31px, 63px);
+    @include fluid(padding-top, 12px, 14px);
+    @include fluid(padding-bottom, 12px, 14px);
+    background: #E6E6E6;
+    //border-top-right-radius: 5px;
+    //border-bottom-right-radius: 5px;
+    //border: 1px solid #CCCCCC;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
 
 }
-.icon{
-  @include fluid(width, 16px, 24px);
-  @include fluid(height, 16px, 24px);
-  object-fit: contain;
+
+.icon {
+    @include fluid(width, 16px, 24px);
+    @include fluid(height, 16px, 24px);
+    object-fit: contain;
 }

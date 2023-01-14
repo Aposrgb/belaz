@@ -1,7 +1,7 @@
 import React from 'react';
 import style from "./LinkMini.module.scss"
 import {NavLink} from "react-router-dom";
-import arrow from "../../assets/arrowBanner.svg";
+import arrow from "../../assets/svg/arrowBanner.svg";
 
 const LinkMini = (props) => {
     return (

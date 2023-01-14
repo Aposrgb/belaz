@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import style from "./Product.module.scss"
 import { Checkbox } from 'antd';
 import { Slider } from 'antd';
-import filter from "../../assets/filter.svg"
+import filter from "../../assets/svg/filter.svg"
 const ProductFilter = (props) => {
 
     console.log(props.filter?.maxPrice)

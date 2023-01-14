@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import product from "../../assets/product.svg";
+import product from "../../assets/svg/product.svg";
 import {GetPopularsProducts} from "../../api/product.js";
 import {AddProductsBasket, AllProductsBasket, DeleteProductsBasket} from "../../api/basket.js";
 const initialState = {

@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import avatar from "../../assets/avatar.png"
+import avatar from "../../assets/images/avatar.png"
 const initialState = {
     personInfo:{
       name:"Егор",

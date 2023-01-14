@@ -70,50 +70,74 @@
   display: grid;
   }
 }
-.button{
-  @include fluid(font-size,14px, 16px);color: #000;
-  font-weight: 500;
-  @include fluid(padding-left, 36px, 72px);
-  @include fluid(padding-right, 36px, 72px);
-  @include fluid(padding-top, 6px, 13px);
-  @include fluid(padding-bottom, 6px, 13px);
-  background: $green;
-  border-radius: 5px;
-  border: 2px solid $green;
-  transition: .38s ease-in-out;
-  cursor: pointer;
-  &:hover{
-    background: #333;
+
+.title {
+    @include fluid(font-size, 28px, 32px);
     color: #fff;
   }
 }
-.input{
-  background: #2B2B2B;
-  color: #fff;
-  @include fluid(font-size,14px, 16px);
-  border: none;
-  @include fluid(padding-top, 6px, 13px);
-  @include fluid(padding-bottom, 6px, 13px);
-  @include fluid(padding-left, 8px, 16px);
-  flex-grow: 1;
-  @include fluid(margin-right, 15px, 30px);
-  &::placeholder{
+
+.flex {
+    display: flex;
+    align-items: center;
+    @include fluid(margin-bottom, 5px, 10px);
+}
+
+.button {
+    @include fluid(font-size, 14px, 16px);
+    color: #000;
+    font-weight: 500;
+    @include fluid(padding-left, 36px, 72px);
+    @include fluid(padding-right, 36px, 72px);
+    @include fluid(padding-top, 6px, 13px);
+    @include fluid(padding-bottom, 6px, 13px);
+    background: $green;
+    border-radius: 5px;
+    border: 2px solid $green;
+    transition: .38s ease-in-out;
+    cursor: pointer;
+
+    &:hover {
+        background: #333;
+        color: #fff;
+
+    }
+}
+
+.input {
+    background: #2B2B2B;
+    color: #fff;
+    @include fluid(font-size, 14px, 16px);
+    border: none;
+    @include fluid(padding-top, 6px, 13px);
+    @include fluid(padding-bottom, 6px, 13px);
+    @include fluid(padding-left, 8px, 16px);
+    flex-grow: 1;
+    @include fluid(margin-right, 15px, 30px);
+
+    &::placeholder {
+        color: #727272;
+    }
+
+    &:focus {
+        outline: none;
+    }
+
+}
+
+.example {
+    @include fluid(font-size, 12px, 14px);
     color: #727272;
-
-  }
-
+    @include fluid(margin-bottom, 15px, 30px);
+    font-weight: 500;
 }
-.example{
-  @include fluid(font-size,12px, 14px);
-  color: #727272;
-  @include fluid(margin-bottom, 15px, 30px);
-  font-weight: 500;
-}
-.description{
-  @include fluid(font-size,12px, 14px);
-  color: #727272;
-  font-weight: 500;
-  span{
-    color: $green;
-  }
+
+.description {
+    @include fluid(font-size, 12px, 14px);
+    color: #727272;
+    font-weight: 500;
+
+    span {
+        color: $green;
+    }
 }

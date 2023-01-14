@@ -5,7 +5,7 @@
   @include  container();
 }
 .bunner{
-  background: url("../../assets/bunnerBackground.png");
+  background: url("../../assets/images/bunnerBackground.png");
   background-repeat: no-repeat;
   width: 100%;
   @include fluid(height, 650px, 777px);
@@ -56,7 +56,7 @@
   }
 }
 .arrow{
-  background: url("../../assets/arrowBanner.svg");
+  background: url("../../assets/svg/arrowBanner.svg");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;

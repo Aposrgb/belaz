@@ -3,7 +3,7 @@
 .bunner{
   @include fluid(margin-top, 25px, 50px);
   @include fluid(margin-bottom, 25px, 50px);
-    background: url("../../assets/bunnerLkMain.png") no-repeat;
+    background: url("../../assets/images/bunnerLkMain.png") no-repeat;
   width: 100%;
   height: fit-content;
   background-size: cover;
@@ -15,10 +15,10 @@
 .title{
   @include fluid(font-size,16px, 20px);
   font-weight: 700;
-  
+
 }
 .subtitle{
   @include fluid(font-size,14px, 16px);
   font-weight: 500;
-  
+
 }

@@ -1,6 +1,6 @@
 import React from "react";
 import style from "./Category.module.scss";
-import picture from "../../assets/nullPicture.png";
+import picture from "../../assets/images/nullPicture.png";
 import { NavLink } from "react-router-dom";
 const CategoryItem = (props) => {
   return (
