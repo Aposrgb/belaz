@@ -1,4 +1,5 @@
 @import "../../style/Mixins.scss";
+@import "../../style/Breakpoints/breakpoints.scss";
 
 .container {
   background: #333333;
@@ -26,6 +27,7 @@
   z-index: 2;
   color: #fff;
   @include fluid(margin-bottom, 50px, 100px);
+  
 }
 .title {
   @include fluid(margin-top, 50px, 110px);
@@ -56,6 +58,9 @@
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
+  @include media("<=tablet") {
+  flex-direction: column;
+  }
 }
 .flex {
   width: 48%;
@@ -68,6 +73,12 @@
   @include fluid(height, 90px, 115px);
   @include fluid(margin-right, 25px, 50px);
   object-fit: cover;
+  @include media("<=tablet") {
+    width: 100%;
+    height: 100%;
+  }
+
+    
 }
 .titleItem {
   @include fluid(font-size, 18px, 20px);
@@ -76,4 +87,7 @@
 }
 .text {
   @include fluid(font-size, 14px, 16px);
+  @include media("<=tablet") {
+  font-size: auto;
+  } 
 }

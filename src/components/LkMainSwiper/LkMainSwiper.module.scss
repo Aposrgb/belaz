@@ -1,30 +1,35 @@
 @import "../../style/Mixins.scss";
+@import "../../style/Breakpoints/breakpoints.scss";
 
-.flex{
+.flex {
   display: flex;
   align-items: center;
   @include fluid(margin-bottom, 10px, 20px);
-  
+  @include media("<=tablet") {
+  }
 }
-.title{
-  @include fluid(font-size,18px, 20px);
+.title {
+  @include fluid(font-size, 18px, 20px);
   font-weight: 700;
   @include fluid(margin-right, 15px, 25px);
 }
-.link{
-  @include fluid(font-size,14px, 16px);
-  color: #00FFC2;
-
+.link {
+  @include fluid(font-size, 14px, 16px);
+  color: #00ffc2;
 }
-.card{
-  background: #FFFFFF;
-  border: 1px solid #E2E2E2;
+.card {
+  background: #ffffff;
+  border: 1px solid #e2e2e2;
   border-radius: 15px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  @include media("<=tablet") {
+    display: block;
+    flex-direction: column;
+  }
 }
-.img{
+.img {
   width: 100%;
   @include fluid(height, 120px, 160px);
   object-fit: contain;
@@ -33,35 +38,43 @@
   background: #fff;
   border-radius: 15px;
 }
-.text{
+.text {
   @include fluid(padding-left, 5px, 10px);
   @include fluid(padding-right, 5px, 10px);
   @include fluid(padding-bottom, 10px, 20px);
-  @include fluid(font-size,10px, 12px);
+  @include fluid(font-size, 10px, 12px);
   font-weight: 600;
+  @include media("<=tablet") {
+    @include fluid(padding-left, 1px, 1px);
+  @include fluid(padding-right, 5px, 10px);
+  @include fluid(padding-bottom, 10px, 20px);
+  @include fluid(font-size, 10px, 12px);
+  }
 }
-.swiper{
+.swiper {
   width: 100%;
   height: 100%;
   margin-right: 30px !important;
+  @include media("<=tablet") {
+  }
 }
-.flexSwiper{
+.flexSwiper {
   display: flex;
   align-items: center;
   height: 100%;
 }
-.btn{
+.btn {
   @include fluid(height, 195px, 240px);
   @include fluid(padding-left, 15px, 20px);
   @include fluid(padding-right, 15px, 20px);
-  background: #FFFFFF;
-  border: 1px solid #E2E2E2;
+  background: #ffffff;
+  border: 1px solid #e2e2e2;
   border-radius: 15px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.arrow{
+.arrow {
   background: url("../../assets/swiperArrow.svg") no-repeat;
   width: 15px;
   height: 30px;

@@ -1,13 +1,17 @@
 @import "../../../style/Mixins";
+@import "../../../style/Breakpoints/breakpoints.scss";
 
 .block{
   width: 23%;
-
+  
 }
 .blockNav{
   display: flex;
   flex-direction: column;
   @include fluid(margin-bottom, 15px, 30px);
+  @include media("<=tablet") {
+   
+  }
 }
 .personAvatar{
   @include fluid(width, 100px, 160px);
@@ -16,6 +20,7 @@
   border-radius: 50%;
   object-fit: contain;
   object-position: center;
+  
 }
 .personText{
   @include fluid(font-size,16px, 20px);

@@ -1,13 +1,18 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap");
 @import "../Style/Mixins";
+@import "./Breakpoints/breakpoints.scss";
 
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  @include media('<=tablet') {
+    overflow: auto;
+  }
 }
 html {
   scroll-behavior: smooth;
+
 }
 button {
   border: none;
@@ -200,6 +205,7 @@ body {
 
   a {
     color: #00ffc2;
+    
   }
 }
 .ant {

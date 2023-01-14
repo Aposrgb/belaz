@@ -1,4 +1,6 @@
 @import "../../style/Mixins.scss";
+@import "../../style/Breakpoints/breakpoints.scss";
+
 .content{
   @include  container();
 }
@@ -12,6 +14,9 @@
 .bunnerContent{
   @include container;
   @include fluid(padding-top, 100px, 170px);
+  @include media('<=tablet') {
+    padding: 20px;
+  }
 }
 .title{
   @include fluid(font-size,48px, 64px);

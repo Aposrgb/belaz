@@ -1,4 +1,5 @@
 @import "../../style/Mixins.scss";
+@import "../../style/Breakpoints/breakpoints.scss";
 
 .footer{
   background: #333333;
@@ -10,11 +11,16 @@
   justify-content: space-between;
   @include container;
   align-items: center;
+  display: -webkit-box;
 }
 .item{
   width: 23%;
   display: flex;
   flex-direction: column;
+  @include media("<=tablet") {
+    flex-direction: column;
+    width: 100%
+  }
 }
 .logo{
   @include fluid(width, 170px, 208px);
