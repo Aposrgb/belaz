@@ -1,9 +1,8 @@
 @import "../../style/Mixins.scss";
-@import "../../style/Breakpoints/breakpoints.scss";
 
 .container {
-    background: #333333;
-    position: relative;
+  background: #333333;
+  position: relative;
 }
 
 .img {
@@ -16,6 +15,9 @@
   background-image: url("../../assets/behefits/banner.png");
   background-repeat: no-repeat;
   z-index: 1;
+  @media screen and (max-width: $breakpoint-sm) {
+    
+  }
 }
 .content {
   @include container;
@@ -28,33 +30,35 @@
   z-index: 2;
   color: #fff;
   @include fluid(margin-bottom, 50px, 100px);
+  @media screen and (max-width: $breakpoint-sm) {
+  }
 }
 
 .title {
-    @include fluid(margin-top, 50px, 110px);
-    @include fluid(font-size, 28px, 32px);
-    font-weight: 700;
+  @include fluid(margin-top, 50px, 110px);
+  @include fluid(font-size, 28px, 32px);
+  font-weight: 700;
 }
 
 .subtitle {
-    @include fluid(font-size, 14px, 16px);
-    @include fluid(margin-bottom, 60px, 130px);
-    font-weight: 500;
-    position: relative;
-    padding-bottom: 33px;
-    z-index: 2;
+  @include fluid(font-size, 14px, 16px);
+  @include fluid(margin-bottom, 60px, 130px);
+  font-weight: 500;
+  position: relative;
+  padding-bottom: 33px;
+  z-index: 2;
 
-    &:before {
-        content: "";
-        position: absolute;
-        transform: translate(-50%);
-        @include fluid(width, 100px, 150px);
-        left: 50%;
-        top: 30px;
-        height: 3px;
-        background: $green;
-        z-index: 3;
-    }
+  &:before {
+    content: "";
+    position: absolute;
+    transform: translate(-50%);
+    @include fluid(width, 100px, 150px);
+    left: 50%;
+    top: 30px;
+    height: 3px;
+    background: $green;
+    z-index: 3;
+  }
 }
 
 .item {
@@ -62,12 +66,20 @@
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
+  @media screen and (max-width: $breakpoint-sm) {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
 }
 .flex {
-    width: 48%;
-    display: flex;
-    align-items: center;
-    @include fluid(margin-bottom, 30px, 60px);
+  width: 48%;
+  display: flex;
+  align-items: center;
+  @include fluid(margin-bottom, 30px, 60px);
+  @media screen and (max-width: $breakpoint-sm) {
+    width: 100%;
+  }
 }
 
 .icon {
@@ -75,11 +87,16 @@
   @include fluid(height, 90px, 115px);
   @include fluid(margin-right, 25px, 50px);
   object-fit: cover;
+  @media screen and (max-width: $breakpoint-md) {
+    height: 100%;
+
+  }
 }
+
 .titleItem {
-    @include fluid(font-size, 18px, 20px);
-    @include fluid(margin-bottom, 10px, 15px);
-    font-weight: 700;
+  @include fluid(font-size, 18px, 20px);
+  @include fluid(margin-bottom, 10px, 15px);
+  font-weight: 700;
 }
 
 .text {

@@ -6,6 +6,9 @@
   @include fluid(padding,15px,30px);
   @include fluid(margin-bottom, 15px, 30px);
 
+  @media screen and (max-width: $breakpoint-md) {
+   text-align: center;
+  }
 }
 .link{
   width: 100%;

@@ -1,11 +1,11 @@
 @import "../../style/Mixins.scss";
-@import "../../style/Breakpoints/breakpoints.scss";
+
 
 .block{
   @include fluid(padding-top, 50px, 100px);
   @include fluid(padding-bottom, 55px, 105px);
   position: relative;
-  @include media("<=tablet") {
+  @media screen and (max-width: $breakpoint-md) {
     padding: 10px;
     padding-top: 65px;
     
@@ -20,7 +20,9 @@
   background: linear-gradient(360deg, #333333 0%, rgba(0, 0, 0, 0.5) 100%), url("../../assets/newsBack.png");
   background-repeat: no-repeat;
   z-index: 1;
-  
+   @media screen and (max-width: $breakpoint-md) {
+      overflow: hidden;
+    }
 }
 .form{
   position: relative;
@@ -34,10 +36,7 @@
   opacity: 0.95;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 35px;
-  @include media("<=tablet") {
-    gap: 10px;
-    display: grid;
-  }
+
 }
 .title{
   @include fluid(font-size,28px, 32px);
@@ -55,32 +54,31 @@
     @include fluid(width, 75px, 150px);
     height: 3px;
     background: $green;
-
   }
-  @include media("<=tablet") {
-    font-size: 30px;
+  @media screen and (max-width: $breakpoint-md) {
+    overflow: hidden;
   }
 }
 .flex{
   display: flex;
   align-items: center;
   @include fluid(margin-bottom, 5px, 10px);
-  @include media("<=tablet") {
-    gap: 12px;
-  display: grid;
-  }
 }
 
 .title {
     @include fluid(font-size, 28px, 32px);
     color: #fff;
   }
-}
+ 
 
 .flex {
     display: flex;
     align-items: center;
     @include fluid(margin-bottom, 5px, 10px);
+    @media screen and (max-width: $breakpoint-md) {
+      gap: 12px;
+      display: grid;
+    }
 }
 
 .button {

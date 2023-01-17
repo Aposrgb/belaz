@@ -5,10 +5,9 @@
   display: flex;
   align-items: center;
   @include fluid(margin-bottom, 10px, 20px);
-  
 }
-.title{
-  @include fluid(font-size,18px, 20px);
+.title {
+  @include fluid(font-size, 18px, 20px);
   font-weight: 700;
   @include fluid(margin-right, 15px, 25px);
 }
@@ -23,9 +22,9 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  @include media("<=tablet") {
-    display: block;
-    flex-direction: column;
+  @media screen and (max-width: $breakpoint-md) {
+    padding: 10px;
+    width: 100%;
   }
 }
 .img {
@@ -45,22 +44,27 @@
   font-weight: 600;
   @include media("<=tablet") {
     @include fluid(padding-left, 1px, 1px);
-  @include fluid(padding-right, 5px, 10px);
-  @include fluid(padding-bottom, 10px, 20px);
-  @include fluid(font-size, 10px, 12px);
+    @include fluid(padding-right, 5px, 10px);
+    @include fluid(padding-bottom, 10px, 20px);
+    @include fluid(font-size, 10px, 12px);
   }
 }
 .swiper {
   width: 100%;
   height: 100%;
   margin-right: 30px !important;
-  @include media("<=tablet") {
-  }
 }
 .flexSwiper {
   display: flex;
   align-items: center;
   height: 100%;
+  width: 480px;
+  @media screen and (min-width: 350px) {
+    width: 100%
+  }
+  @media screen and (min-width: 768px) {
+    width: 100%
+  }
 }
 .btn {
   @include fluid(height, 195px, 240px);
@@ -73,7 +77,7 @@
   align-items: center;
   justify-content: center;
 }
-.arrow{
+.nextArrow {
   background: url("../../assets/swiperArrow.svg") no-repeat;
   width: 15px;
   height: 30px;

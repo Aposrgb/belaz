@@ -6,9 +6,6 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  @include media('<=tablet') {
-    overflow: auto;
-  }
 }
 html {
   scroll-behavior: smooth;
@@ -82,15 +79,25 @@ body {
 .product {
   display: flex;
   justify-content: space-between;
+  @media screen and (max-width: $breakpoint-md) {
+    flex-direction: column;
+  }
 }
 .filter {
   width: 18%;
+  @media screen and (max-width: $breakpoint-md) {
+    width: 100%;
+    margin-top: 18px;
+  }
 }
 .cards {
   width: 75%;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  @media screen and (max-width: $breakpoint-md) {
+    width: 100%;
+  }
 }
 .ant-slider-track {
   background-color: $green;
@@ -131,9 +138,16 @@ body {
   min-height: 100vh;
   @include fluid(margin-top, 50px, 110spx);
   @include fluid(margin-bottom, 50px, 110px);
+  @media screen and (max-width: $breakpoint-md) {
+    flex-direction: column;
+  }
 }
 .block {
   width: 75%;
+  @media screen and (max-width: $breakpoint-md) {
+    width: 100%;
+  } 
+
 }
 .title {
   @include fluid(font-size, 18px, 24px);

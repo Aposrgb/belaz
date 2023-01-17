@@ -8,15 +8,6 @@ import { GetSearch } from "../store/slice/searcSlice.js";
 
 const News = (props) => {
   const [year, setYear] = useState(2022)
-  // const [year, setYear] = useState(new Date().getFullYear())
-
-  useEffect(() => {
-
-    props.GetNewsAll(
-      1, 10, year
-    );
-
-  }, [])
 
   useEffect(() => {
 
@@ -28,6 +19,7 @@ const News = (props) => {
 
   useDisableScroll(props.newsLoading)
 
+console.log(props);
   return (
     <div className="content">
       { props.newsLoading ? <Preloader/> : "" }

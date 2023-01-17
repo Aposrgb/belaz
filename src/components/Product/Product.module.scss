@@ -4,6 +4,9 @@
   display: flex;
   align-items: center;
   flex-wrap: wrap;
+  @media screen and (max-width: $breakpoint-md) {
+    // flex-direction: column;
+  }
 }
 .card {
   background: #ffffff;
@@ -116,10 +119,16 @@
   display: flex;
   align-items: center;
 }
+
 .flexBetween {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  @media screen and (max-width: $breakpoint-sm) {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
 }
 .select {
   @include fluid(width, 170px, 210px);

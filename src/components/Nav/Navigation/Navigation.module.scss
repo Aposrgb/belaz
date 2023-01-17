@@ -1,0 +1,44 @@
+@import "../../../style/Mixins.scss";
+
+.link {
+    @include fluid(font-size, 12px, 14px);
+    font-weight: 500;
+    color: #fff;
+    transition: 0.38s ease-in-out;
+    position: relative;
+    cursor: pointer;
+    &:before {
+      width: 0%;
+      height: 5px;
+      background: $green;
+      
+      content: "";
+      @include fluid(top, 37px, 49px);
+      left: 50%;
+      transform: translate(-50%);
+      transition: 0.38s ease-in-out;
+    }
+    &:hover {
+      color: $green;
+      &:before {
+        width: 100%;
+      }
+    }
+  }
+  .active {
+    color: $green;
+    &:before {
+      width: 100%;
+    }
+  }
+
+.navigation {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    margin-bottom: 0;
+    background: #333333;
+    li {
+      @include fluid(margin-right, 35px, 70px);
+    }
+  }

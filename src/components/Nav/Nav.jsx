@@ -1,86 +1,26 @@
+
 import React, { useState, useEffect } from "react";
-import { NavLink } from "react-router-dom";
 import style from "./Nav.module.scss";
 import ModalItem from "../Modal/ModalItem";
 import NavIcon from "./NavIcon";
-const Nav = () => {
-  const [token, setToken] = useState("");
+import Navigation from "./Navigation/Navigation";
 
-  useEffect(() => {
-    const items = localStorage.token;
-    if (items) {
-      setToken(items);
-    }
-  }, [token]);
+
+const Nav = ({token}) => {
+ 
 
   return (
-    <div className={style.nav}>
-      <ul>
-        <li>
-          <NavLink
-            className={({ isActive }) =>
-              isActive ? `${style.link} ${style.active}` : `${style.link} `
-            }
-            to=""
-          >
-            Главная
-          </NavLink>
-        </li>
-        <li>
-          <NavLink
-            className={({ isActive }) =>
-              isActive ? `${style.link} ${style.active}` : `${style.link} `
-            }
-            to="catalog"
-          >
-            Каталог
-          </NavLink>
-        </li>
-
-        <li>
-          <NavLink
-            className={({ isActive }) =>
-              isActive ? `${style.link} ${style.active}` : `${style.link} `
-            }
-            to="news"
-          >
-            Новости
-          </NavLink>
-        </li>
-        <li>
-          <NavLink
-            className={({ isActive }) =>
-              isActive ? `${style.link} ${style.active}` : `${style.link} `
-            }
-            to="contact"
-          >
-            Контакты
-          </NavLink>
-        </li>
+      <div className={style.nav}>
+        <Navigation className={style.row_nav} token={token} />
+        {token ? <NavIcon /> : ""}
         {token ? (
-          <li>
-            <NavLink
-              to="/lk"
-              className={({ isActive }) =>
-                isActive ? `${style.link} ${style.active}` : `${style.link} `
-              }
-            >
-              Кабинет
-            </NavLink>
-          </li>
+          ""
         ) : (
-          <></>
+          <>
+            <ModalItem />
+          </>
         )}
-      </ul>
-      {token ? <NavIcon /> : ""}
-      {token ? (
-        ""
-      ) : (
-        <>
-          <ModalItem />
-        </>
-      )}
-    </div>
+      </div>
   );
 };
 

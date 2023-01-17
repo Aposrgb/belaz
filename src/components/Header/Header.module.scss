@@ -2,7 +2,7 @@
 
 .header{
   background: #333333;
-  position: relative;
+  position: relative
 }
 .headerContainer{
   @include container;
@@ -11,11 +11,24 @@
   justify-content: space-between;
   @include fluid(padding-top, 10px, 20px);
   @include fluid(padding-bottom, 10px, 20px);
+
 }
 .logo{
   @include fluid(width, 170px, 208px);
   @include fluid(height, 38px, 43px);
   object-fit: contain;
+}
+
+.column_nav {
+  padding: 10px 8px !important;
+  display: none !important;
+  @media screen and (max-width: $breakpoint-md) {
+    display: flex !important;
+
+    li {
+      margin-right: 15px !important;
+    }
+  }
 }
 .headerUnder{
   

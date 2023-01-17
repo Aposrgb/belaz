@@ -42,8 +42,10 @@ const ProductDiscount = (props) => {
       <div className={style.flexBetween}>
         <TitleDiscount />
         <div className={style.sortFlex}>
-          <ProductSelectSort />
-          <LineOrBlock line={line} setLine={setLine} />
+          <div>
+            <ProductSelectSort />
+            <LineOrBlock line={line} setLine={setLine} />
+          </div>
         </div>
       </div>
       <div className="product">

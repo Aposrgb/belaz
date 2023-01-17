@@ -25,18 +25,29 @@
   @include fluid(padding-left, 45px, 90px);
   @include fluid(padding-right, 45px, 90px);
   @include fluid(margin-bottom, 30px, 60px);
+
 }
 .title{
   @include fluid(font-size,36px, 48px);
   font-weight: 700;
   @include fluid(margin-bottom, 10px, 20px);
+  @media screen and (max-width: $breakpoint-sm) {
+    font-size: 18px;
+  }
 }
 .subtitle{
   @include fluid(font-size,18px, 24px);
   font-weight: 500;
+  @media screen and (max-width: $breakpoint-sm) {
+    font-size: 12px;
+  }
 }
 .bannerImg{
   @include fluid(width, 300px, 400px);
   height: 100%;
   object-fit: contain;
+  @media screen and (max-width: $breakpoint-sm) {
+    width: 195px;
+    height: 100%;
+  }
 }

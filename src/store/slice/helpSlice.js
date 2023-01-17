@@ -153,14 +153,23 @@ export const helpSlice = createSlice({
       state.helps = action.payload;
       state.isLoading = false;
     },
+    failureFetchHelp(state) {
+      state.helps = initialState.helps;
+      state.isLoading = false;
+      state.error = "Извините, что то пошло не так";
+    },
   },
 });
 
 export const GetHelp = () => {
   return async (dispatch) => {
     dispatch(helpSlice.actions.fetchHelp());
-    const response = await GetAllHelp();
-    dispatch(helpSlice.actions.successFecthHelp(response));
+    try {
+      const response = await GetAllHelp();
+      dispatch(helpSlice.actions.successFecthHelp(response));
+    } catch (e) {
+      dispatch(helpSlice.actions.failureFetchHelp());
+    }
   };
 };
 

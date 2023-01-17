@@ -18,14 +18,23 @@ export const feedbackSlice = createSlice({
       state.feedback = action.payload;
       state.isLoading = false;
     },
+    failureFetchFeedback(state) {
+      state.feedback = initialState.feedback;
+      state.isLoading = false;
+      state.error = "Извините, что то пошло не так";
+    },
   },
 });
 
 export const PostFeedbackFunc = (name, phone, email, message) => {
   return async (dispatch) => {
     dispatch(feedbackSlice.actions.postFeedback());
-    const response = await PostFeedback(name, phone, email, message);
-    dispatch(feedbackSlice.actions.successPostFeedback(response));
+    try {
+      const response = await PostFeedback(name, phone, email, message);
+      dispatch(feedbackSlice.actions.successPostFeedback(response));
+    } catch (e) {
+      dispatch(feedbackSlice.actions.failureFetchFeedback());
+    }
   };
 };
 

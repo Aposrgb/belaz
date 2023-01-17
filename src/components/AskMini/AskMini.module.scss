@@ -9,6 +9,10 @@
   align-items: center;
   justify-content: center;
   @include fluid(margin-bottom, 15px, 30px);
+  @media screen and (max-width: $breakpoint-md) {
+    
+    gap: 16px;
+  }
 }
 .img{
   @include fluid(width, 100px, 155px);
@@ -39,5 +43,8 @@
   &:hover{
     background: transparent;
     color: #00FFC2;
+  }
+  @media screen and (max-width: $breakpoint-md) {
+    margin-top: 16px;
   }
 }

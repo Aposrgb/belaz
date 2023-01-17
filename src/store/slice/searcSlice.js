@@ -17,6 +17,11 @@ export const searchSlice = createSlice({
             state.search = action.payload;
             state.isLoading = false
         },
+        failureFetchProducts(state){
+            state.search = initialState.search;
+            state.isLoading = false;
+            state.error = 'Извините, что то пошло не так'
+        }
     },
 });
 

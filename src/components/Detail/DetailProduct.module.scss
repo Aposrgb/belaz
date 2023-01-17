@@ -5,20 +5,34 @@
   justify-content: space-between;
   align-items: center;
   @include fluid(margin-bottom, 40px, 55px);
+  @media screen and (max-width: $breakpoint-md) {
+    display: flex;
+    flex-direction: column;
+  }
 }
 .img {
   @include fluid(width, 300px, 350px);
   @include fluid(height, 300px, 350px);
   object-fit: contain;
   object-position: center;
+  @media screen and (max-width: $breakpoint-md) {
+    width: 100%;
+  }
 }
 .item {
   width: 50%;
+  @media screen and (max-width: $breakpoint-md) {
+    display: contents;
+  }
 }
 .grabe {
   display: flex;
   align-items: center;
   @include fluid(margin-bottom, 15px, 20px);
+  @media screen and (max-width: $breakpoint-md) {
+    display: flex;
+    flex-direction: column;
+  }
 }
 .icon {
   @include fluid(height, 10px, 14px);
@@ -48,21 +62,33 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  @media screen and (max-width: $breakpoint-md) {
+    flex-direction: column;
+  }
 }
 .countPrice {
   @include fluid(font-size, 18px, 20px);
   font-weight: 700;
   @include fluid(margin-right, 30px, 50px);
+  @media screen and (max-width: $breakpoint-md) {
+    padding-left: 12px;
+  }
 }
 .countTextFlex {
   display: flex;
   align-items: center;
+  @media screen and (max-width: $breakpoint-md) {
+    flex-direction: column;
+  }
 }
 .countText {
   @include fluid(font-size, 16px, 18px);
 }
 .countBtnFlex {
   display: flex;
+  @media screen and (max-width: $breakpoint-md) {
+    margin-top: 20px;
+  }
 }
 .favorite {
   @include fluid(width, 40px, 46px);
@@ -101,6 +127,9 @@
   transition: 0.38s ease-in-out;
   &:hover {
     background: #00ffc2;
+  }
+  @media screen and (max-width: $breakpoint-md) {
+    text-align: center;
   }
 }
 .descriptionTitle {

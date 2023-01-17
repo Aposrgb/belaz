@@ -7,6 +7,8 @@ const LkBlockOrder = (props) => {
             <div className={style.title}>
                 Заказы
             </div>
+            
+
             <NavLink
                 className={({ isActive }) =>
                     isActive ? `${style.link} ${style.active}` : `${style.link} `
@@ -39,6 +41,7 @@ const LkBlockOrder = (props) => {
             >
                 История просмотров
             </NavLink>
+            
         </div>
     );
 };

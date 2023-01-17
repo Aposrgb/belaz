@@ -4,6 +4,7 @@ ul {
   display: flex;
   align-items: center;
   justify-content: center;
+  list-style-type: none;
   @include fluid(padding-top, 10px, 15px);
   li {
     @include fluid(margin-right, 25px, 50px);

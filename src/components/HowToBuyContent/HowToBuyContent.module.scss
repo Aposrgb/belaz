@@ -1,105 +1,118 @@
 @import "../../style/Mixins.scss";
 
-.flex{
+.flex {
   display: flex;
   justify-content: space-between;
   @include fluid(margin-top, 7px, 10px);
   @include fluid(margin-bottom, 55px, 150px);
-
+  @media screen and (max-width: $breakpoint-md) {
+    flex-direction: column;
+  }
 }
-.nav{
+.nav {
   width: 17.7%;
 }
-.title{
-  @include fluid(font-size,22px, 28px);
-  color:#000;
+.title {
+  @include fluid(font-size, 22px, 28px);
+  color: #000;
   font-weight: 700;
   @include fluid(margin-bottom, 15px, 30px);
 }
-.navBlock{
+.navBlock {
   display: flex;
   flex-direction: column;
   @include fluid(margin-bottom, 15px, 30px);
+  @media screen and (max-width: $breakpoint-md) {
+    gap: 15px;
+    flex-flow: nowrap;
+  }
 }
-.link{
-  @include fluid(font-size,12px, 14px);
+.link {
+  @include fluid(font-size, 12px, 14px);
   color: #000;
   font-weight: 500;
-  background: #00FFC2;
+  background: #00ffc2;
   border-radius: 5px 5px 0px 0px;
   @include fluid(margin-bottom, 4px, 5px);
   @include fluid(padding-top, 7px, 12px);
   @include fluid(padding-bottom, 7px, 12px);
   @include fluid(padding-left, 10px, 15px);
+  @media screen and (max-width: $breakpoint-md) {
+    padding-right: 14px;
+    border-radius: 5px 5px 5px 5px;
+  }
 }
-.active{
+.active {
   background: #333333;
   color: #ffffff !important;
 }
-.newsContainer{
+.newsContainer {
   @include fluid(margin-bottom, 15px, 30px);
+  @media screen and (max-width: $breakpoint-md) {
+    display: none;
+  }
 }
-.newsTitle{
-  @include fluid(font-size,14px, 16px);
+.newsTitle {
+  @include fluid(font-size, 14px, 16px);
   color: #000;
   font-weight: 700;
 }
-.flexTitle{
+.flexTitle {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-.flexNav{
+.flexNav {
   display: flex;
   align-items: center;
 }
-.newsLink{
-  @include fluid(font-size,12px, 14px);
+.newsLink {
+  @include fluid(font-size, 12px, 14px);
   font-weight: 500;
-  transition: .38s ease-in-out;
-  color: #CCCCCC;
+  transition: 0.38s ease-in-out;
+  color: #cccccc;
   line-height: 17px;
   display: block;
-  &:hover{
-    color: #00FFC2;
+  &:hover {
+    color: #00ffc2;
   }
 }
-.content{
+.content {
   width: 80%;
 }
-.linkContent{
-  @include fluid(font-size,12px, 14px);
+.linkContent {
+  @include fluid(font-size, 12px, 14px);
   @include fluid(width, 150px, 200px);
   border: 1px solid transparent;
   color: #000;
   text-align: center;
   @include fluid(margin-right, 10px, 15px);
-  background: #00FFC2;
+  background: #00ffc2;
   border-radius: 5px;
-@include fluid(padding-top, 8px, 12px);
-@include fluid(padding-bottom, 8px, 12px);
-  transition: .38s ease-in-out;
-  &:hover{
-    color: #00FFC2;
+  @include fluid(padding-top, 8px, 12px);
+  @include fluid(padding-bottom, 8px, 12px);
+  transition: 0.38s ease-in-out;
+  &:hover {
+    color: #00ffc2;
     background: #fff;
     border: 1px solid #000;
   }
 }
-.activeContent{
+.activeContent {
   background: #333;
   color: #fff !important;
-  &:hover{
+  &:hover {
     background: #333;
   }
 }
-.navLink{
+.navLink {
   text-align: center;
   border-radius: 5px;
-  border: 1px solid #CCCCCC;
+  border: 1px solid #cccccc;
   color: #000 !important;
   @include fluid(padding-top, 8px, 12px);
   @include fluid(padding-bottom, 8px, 12px);
-  @include fluid(font-size,12px, 14px);
+  @include fluid(font-size, 12px, 14px);
   @include fluid(width, 150px, 200px);
   display: block;
 }

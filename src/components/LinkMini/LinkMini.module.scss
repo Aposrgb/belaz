@@ -5,6 +5,10 @@
   background: #FBFBFB;
   border-radius: 10px;
   @include fluid(margin-bottom, 15px, 30px);
+  @media screen and (max-width: $breakpoint-md) {
+    display: flex;
+    
+  }
 }
 .link{
   display: flex;
@@ -25,10 +29,16 @@
   @include fluid(font-size,12px, 14px);
   color:#333;
   letter-spacing: 0.05em;
-
+  @media screen and (max-width: $breakpoint-md) {
+    padding: 3px;
+    justify-content: center
+  }
 }
 .icon{
   @include fluid(width, 15px, 20px);
   @include fluid(height, 7px, 10px);
   object-fit: contain;
+  @media screen and (max-width: $breakpoint-md) {
+    display: none;
+  }
 }

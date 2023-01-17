@@ -17,14 +17,23 @@ export const productDetailSlice = createSlice({
       state.detail = action.payload;
       state.isLoading = false;
     },
+    failureFetchDetail(state) {
+      state.detail = initialState.detail;
+      state.isLoading = false;
+      state.error = "Извините, что то пошло не так";
+    },
   },
 });
 
 export const GetDetailProducts = (id) => {
   return async (dispatch) => {
     dispatch(productDetailSlice.actions.fetchDetail());
-    const response = await GetProductDetail(id);
-    dispatch(productDetailSlice.actions.successFetchDetail(response));
+    try {
+      const response = await GetProductDetail(id);
+      dispatch(productDetailSlice.actions.successFetchDetail(response));
+    } catch (e) {
+      dispatch(productDetailSlice.actions.failureFetchDetail());
+    }
   };
 };
 

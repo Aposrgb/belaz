@@ -1,9 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import {GetNews, GetNewsDetail} from "../../api/news.js";
 const initialState = {
-   news:[
-
-   ],
+   news:[],
     isLoading: false,
     error: "",
 };
@@ -14,11 +12,18 @@ export const newsSlice = createSlice({
     reducers: {
         fetchNews(state){
             state.isLoading = true
+            state.error = ''
         },
         successFetchNews(state,action){
             state.news = action.payload
             state.isLoading = false
         },
+        failureFetchNews(state){
+            state.news = initialState.news;
+            state.isLoading = false;
+            state.error = 'Извините, что то пошло не так'
+        }
+        
 
     },
 });
@@ -28,8 +33,12 @@ export const GetNewsAll = (
 ) => {
     return async (dispatch) => {
         dispatch(newsSlice.actions.fetchNews())
-        const response = await GetNews(page,limit,year);
-        dispatch(newsSlice.actions.successFetchNews(response));
+        try{
+            const response = await GetNews(page,limit,year);
+            dispatch(newsSlice.actions.successFetchNews(response));
+        }catch(e){
+            dispatch(newsSlice.actions.failureFetchNews())
+        }
     };
 };
 

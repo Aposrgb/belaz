@@ -7,6 +7,7 @@ import LkBlockOther from "./LkBlockOther.jsx";
 const LkBlock = (props) => {
     return (
         <div className={style.block}>
+            
             <LkBlockPersonInfo personInfo={props.personInfo}/>
             <LkBlockSetting/>
             <LkBlockOrder/>

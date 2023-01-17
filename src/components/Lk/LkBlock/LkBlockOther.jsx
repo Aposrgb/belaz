@@ -7,6 +7,8 @@ const LkBlockOther = (props) => {
             <div className={style.title}>
                 Другое
             </div>
+           
+
             <NavLink
                 className={({ isActive }) =>
                     isActive ? `${style.link} ${style.active}` : `${style.link} `
@@ -31,6 +33,7 @@ const LkBlockOther = (props) => {
             >
                 Гарантия на товар
             </NavLink>
+            
         </div>
     );
 };

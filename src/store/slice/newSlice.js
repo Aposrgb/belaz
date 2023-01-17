@@ -20,6 +20,11 @@ export const newSlice = createSlice({
             state.new = action.payload;
             state.isLoading = false
         },
+        failureFetchNew(state){
+            state.new = initialState.new;
+            state.isLoading = false;
+            state.error = 'Извините, что то пошло не так'
+        }
     },
 });
 

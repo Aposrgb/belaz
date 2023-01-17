@@ -1,69 +1,60 @@
 @import "../../style/Mixins.scss";
 @import "../../style/Breakpoints/breakpoints.scss";
 
-ul {
-  list-style-type: none;
+.wrapper {
   display: flex;
-  align-items: center;
-  margin-bottom: 0;
-  li {
-    @include fluid(margin-right, 35px, 70px);
-  }
-}
-.link {
-  @include fluid(font-size, 12px, 14px);
-  font-weight: 500;
-  color: #fff;
-  transition: 0.38s ease-in-out;
-  position: relative;
-  cursor: pointer;
-  &:before {
-    width: 0%;
-    height: 5px;
-    background: $green;
-    position: absolute;
-    content: "";
-    @include fluid(top, 37px, 49px);
-    left: 50%;
-    transform: translate(-50%);
-    transition: 0.38s ease-in-out;
-  }
-  &:hover {
-    color: $green;
-    &:before {
-      width: 100%;
-    }
-  }
-}
-.active {
-  color: $green;
-  &:before {
-    width: 100%;
-  }
-}
-.nav {
-  display: flex;
-  align-items: center;
-}
-.iconItem {
-  @include fluid(margin-right, 20px, 40px);
-  &:last-child {
-    margin-right: 0;
+  flex-direction: row;
+  @media screen and (max-width: $breakpoint-md) {
+    flex-direction: column;
   }
 }
 
-@include media("<=tablet") {
-  ul{
-    width: 100%;
-    background: #00FFC2;
-    position: absolute;
-    top: 75px;
-    right: 0;
-    z-index: 2;
-  }
-  li{
-    display: block;
-    margin-top: 10px;
-    margin-bottom: 10px;
+.nav {
+  display: flex;
+  align-items: center;
+  @media screen and (max-width: $breakpoint-md) {
+    
   }
 }
+
+.row_nav {
+  @media screen and (max-width: $breakpoint-md) {
+    display: none !important;
+  }
+}
+
+.icon {
+  margin: 8px;
+  overflow: hidden;
+  @media screen and (max-width: $breakpoint-md) {
+
+     }
+}
+
+
+
+// @media screen and (max-width: $breakpoint-lg) {
+
+// }
+
+// @media screen and (max-width: $breakpoint-md) {
+
+// }
+
+// @media screen and (max-width: $breakpoint-sm) {
+
+// }
+
+// @include media("<=tablet") {
+// ul{
+//   width: 100%;
+//   background: #00FFC2;
+//   top: 75px;
+//   right: 0;
+//   z-index: 2;
+// }
+// li{
+//   display: block;
+//   margin-top: 10px;
+//   margin-bottom: 10px;
+// }
