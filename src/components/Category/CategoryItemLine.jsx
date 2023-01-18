@@ -3,7 +3,6 @@ import style from "./Category.module.scss";
 import { NavLink } from "react-router-dom";
 
 const CategoryItemLine = (props) => {
-  console.log(props);
   return (
     <div className={style.cardLine}>
       <img

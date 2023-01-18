@@ -9,19 +9,18 @@ import Title from "../components/Title/Title";
 import { useDisableScroll } from "../hooks/useDisableScroll.js";
 
 export default function ProductDetail(props) {
-  const id = useParams();
+  const params = useParams();
 
   useEffect(() => {
-    props.GetDetailProducts(id.id);
+    props.GetDetailProducts(params.id);
     props.GetRecommends(1, 5);
   }, []);
-  console.log(props.detail);
 
   useDisableScroll(props.detailLoading)
 
   return (
     <div className="content">
-      {props.detailLoading ? <Preloader /> : ""}
+      {props.detailLoading ? <Preloader /> : null}
       <Search GetSearch={props.GetSearch} />
       <BreadcrumbDetailProduct detail={props.detail?.data} />
       <DetailProduct detail={props.detail.data} />

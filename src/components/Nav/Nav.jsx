@@ -12,7 +12,7 @@ const Nav = ({token}) => {
   return (
       <div className={style.nav}>
         <Navigation className={style.row_nav} token={token} />
-        {token ? <NavIcon /> : ""}
+        {token ? <NavIcon /> : null}
         {token ? (
           ""
         ) : (

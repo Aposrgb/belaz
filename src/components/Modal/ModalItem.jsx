@@ -21,7 +21,6 @@ const ModalItem = (props) => {
   const handleCancel = () => {
     setIsModalOpen(false);
   };
-  console.log(isModalOpen);
   return (
     <>
       <div onClick={showModal} className={style.link}>

@@ -15,6 +15,7 @@ const Header = (props) => {
       setToken(items);
     }
   }, [token]);
+
   return (
     <>
       <div className={style.header}>

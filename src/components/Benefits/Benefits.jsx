@@ -1,6 +1,7 @@
 import React from "react";
 import style from "./Benefits.module.scss";
 import BenefitsItem from "./BenefitsItem";
+
 export default function Benefits(props) {
   let item = props.benefits.map((e) => (
     <BenefitsItem

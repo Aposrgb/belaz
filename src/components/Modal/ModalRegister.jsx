@@ -10,7 +10,13 @@ const ModalRegister = (props) => {
   const [phone, setPhone] = useState("");
 
   const Reg = (email, password, name, surname, patronymic, phone) => {
-    Registration(email, password, name, surname, patronymic, phone);
+    Registration(email, password, name, surname, patronymic, phone).then(
+      (res) => {
+        if (res.data.token) {
+          props.registrathion();
+        }
+      }
+    );
   };
 
   return (

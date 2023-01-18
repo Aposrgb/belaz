@@ -6,7 +6,7 @@ const HowToBuyNews = (props) => {
   let news = props.news.data?.map((e) => (
     <HowToBuyNewsItem
       id={e.id}
-      key={e.key}
+      key={e.id}
       createdAt={e.createdAt}
       name={e.name}
     />

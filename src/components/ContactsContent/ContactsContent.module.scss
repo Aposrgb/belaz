@@ -19,4 +19,8 @@
 }
 .content{
   width: 68%;
+  @media screen and (max-width: $breakpoint-md) {
+    flex-direction: column;
+    width: 100%;
+  }
 }

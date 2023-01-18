@@ -5,6 +5,7 @@ import Title from "../components/Title/Title.jsx";
 import Order from "../components/Order/Order.jsx";
 
 const BasketOrder = (props) => {
+
     return (
         <div className="content">
             <Search/>

@@ -11,7 +11,7 @@ const LkBlockPersonInfo = (props) => {
           alt="avatar"
         />
         <div className={style.personInfo}>
-          <div className={style.personText}>{props.personInfo.name}</div>
+          <div className={style.personText}>{props.personInfo.firstname}</div>
           <div className={style.personText}>{props.personInfo.surname}</div>
         </div>
       </div>

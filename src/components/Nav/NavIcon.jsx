@@ -14,9 +14,9 @@ export default function Icon(props) {
         </Badge>
       </NavLink>
       <NavLink to="lk/basket" className={style.iconItem}>
-        <Badge count={1}>
+        {/* <Badge count={1}> */}
           <Avatar shape="square" icon={<Basket />} />
-        </Badge>
+        {/* </Badge> */}
       </NavLink>
     </>
   );

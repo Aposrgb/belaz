@@ -23,6 +23,7 @@ import BasketOrderContainer from "./views/BasketOrderContainer.jsx";
 import ProductsContainer from "./views/ProductsContainer.jsx";
 import ProductDetailContainer from "./views/ProductDetailContainer.jsx";
 import SearchContainer from "./views/SearchContainer";
+
 function App() {
   return (
     <BrowserRouter>

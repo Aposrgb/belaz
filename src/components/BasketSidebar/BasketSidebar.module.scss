@@ -8,6 +8,7 @@
   @include fluid(padding,15px,30px);
 }
 .btn{
+  margin-top: 16px;
   display: block;
   text-align: center;
   @include fluid(font-size,12px, 14px);

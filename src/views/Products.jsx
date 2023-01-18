@@ -12,7 +12,6 @@ export default function Products(props) {
     props.GetProducts(1, 20, id.id);
     props.GetFilter();
   }, []);
-  console.log(props);
 
   useDisableScroll(props.productsLoader)
   return (

@@ -1,12 +1,12 @@
 import { Api } from "./api.js";
 
 export const Autorize = async (email, password) => {
-  console.log("pag");
   const response = await Api.post("api/security/auth", {
     email: email,
     password: password,
   });
-  return localStorage.setItem("token", response.data.data.token);
+  localStorage.setItem("token", response.data.data.token);
+  window.location.reload();
 };
 export const Registration = async (
   email,

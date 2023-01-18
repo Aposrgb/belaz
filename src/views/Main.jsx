@@ -6,9 +6,9 @@ import NewsForm from "../components/News/NewsForm.jsx";
 const Main = (props) => {
   return (
     <div>
-        <HomeBunner GetSearch={props.GetSearch}/>
-        <Benefits benefits={props.benefits} />
-        <NewsForm/>
+      <HomeBunner GetSearch={props.GetSearch} />
+      <Benefits benefits={props.benefits} />
+      <NewsForm />
     </div>
   );
 };

@@ -3,9 +3,28 @@ import style from "./DetailProduct.module.scss";
 import Counter from "../Counter/Counter.jsx";
 import star from "../../assets/svg/star.svg";
 import favorite from "../../assets/svg/favorite.svg";
-export default function DetailProduct(props) {
-  const [count, setCount] = useState(0);
+import { Api } from "../../api/api";
 
+export default function DetailProduct(props) {
+  const [count, setCount] = useState(1);
+
+  const handleAddFavorite = () => {
+    const token = localStorage.token;
+    Api.put(
+      "api/favorite/" + props.detail.id,
+      {},
+      { headers: { apiKey: token } }
+    );
+  };
+
+  const handleAddInBasket = (e) => {
+    const token = localStorage.token;
+    Api.put(
+      "api/basket/" + props.detail.id,
+      { count },
+      { headers: { apiKey: token } }
+    );
+  };
   return (
     <>
       <div className={style.flex}>
@@ -29,9 +48,15 @@ export default function DetailProduct(props) {
             </div>
             <div className={style.countBtnFlex}>
               <div className={style.favorite}>
-                <img src={favorite} className={style.favoriteIcon} />
+                <img
+                  onClick={handleAddFavorite}
+                  src={favorite}
+                  className={style.favoriteIcon}
+                />
               </div>
-              <div className={style.basket}>В корзину</div>
+              <div className={style.basket} onClick={handleAddInBasket}>
+                В корзину
+              </div>
             </div>
           </div>
         </div>

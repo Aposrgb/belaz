@@ -2,12 +2,30 @@ import React, { useState } from "react";
 import style from "./ContactsBlock.module.scss";
 import { Checkbox } from "antd";
 import gear from "../../../assets/svg/gear.svg";
+import { PostFeedback } from "../../../api/feedback";
+
 const ContactsBlockForm = (props) => {
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [check, setCheck] = useState(false);
+
+  const handleSubmitFeedback = (e) => {
+    e.preventDefault();
+
+    PostFeedback(name, phone, email, message)
+      .then((res) => {
+
+      })
+      .finally(() => {
+        setCheck(false);
+        setName("");
+        setPhone("");
+        setEmail("");
+        setMessage("");
+      });
+  };
 
   return (
     <div className={style.block}>
@@ -58,14 +76,7 @@ const ContactsBlockForm = (props) => {
         </div>
         <div className={style.button}>
           <button
-            onClick={(e) => {
-              e.preventDefault();
-              props.PostFeedbackFunc(name, phone, email, message);
-              setName("");
-              setPhone("");
-              setEmail("");
-              setMessage("");
-            }}
+            onClick={handleSubmitFeedback}
             className={
               check ? style.btn : `${style.buttonNoActive} ${style.btn}`
             }
