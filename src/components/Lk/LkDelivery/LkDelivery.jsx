@@ -1,9 +1,24 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import LkDeliveryItem from "./LkDeliveryItem.jsx";
 import style from "./LkDelivery.module.scss";
+import { Api } from "../../../api/api.js";
 
 const LkDelivery = (props) => {
-  let item = props.order.map((e) => (
+  const [orders, setOrders] = useState([]);
+
+  useEffect(() => {
+    const token = localStorage.token;
+    Api.get("/api/purchase", { headers: { apiKey: token } }).then(res => {
+
+      setOrders(res.data.data)
+    })
+  }, []);
+
+  console.log('====================================');
+  console.log(orders);
+  console.log('====================================');
+
+  let item = orders.map((e) => (
     <LkDeliveryItem
       id={e.id}
       key={e.id}

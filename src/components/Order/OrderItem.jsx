@@ -8,7 +8,7 @@ const OrderItem = (props) => {
             <img src={props.icon} className={style.iconDelivery}/>
             <div>
                 <div className={style.deliveryText}>{props.text}</div>
-                <div className={style.deliveryDescription}>{props.description}</div>
+                {/* <div className={style.deliveryDescription}>{props.description}</div> */}
             </div>
         </div>
     );

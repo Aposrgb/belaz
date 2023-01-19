@@ -11,6 +11,13 @@ const initialState = {
     patronymic: "",
     email: "",
     phone: "",
+    dateBirth: "",
+    address: "",
+    city: "",
+    countrt: "",
+    index: "",
+    locality: "",
+    photo: "",
   },
   isLoading: false,
   error: "",
@@ -24,7 +31,7 @@ export const personInfoSlice = createSlice({
       state.isLoading = true;
     },
     successFetchPerson(state, action) {
-      state.personInfo = {...action.payload, avatar};
+      state.personInfo = { ...action.payload, avatar };
       state.isLoading = false;
     },
     failureFetchPerson(state) {

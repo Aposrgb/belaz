@@ -4,9 +4,15 @@
   display: flex;
   justify-content: space-between;
   @include fluid(margin-bottom, 50px, 100px);
+  @media screen and (max-width: $breakpoint-md) {
+    flex-direction: column;
+  }
 }
 .block{
   width: 68%;
+  @media screen and (max-width: $breakpoint-md) {
+    width: 100%;
+  }
 }
 .sidebar{
   position: relative;

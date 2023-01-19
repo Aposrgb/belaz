@@ -36,7 +36,9 @@ const BasketSidebar = (props) => {
         }  ₽`}</div>
       </div>
       {isOrderPage ? (
-        <div className={style.btn}>Заказать</div>
+        <div onClick={props?.onOrder} className={style.btn}>
+          Заказать
+        </div>
       ) : (
         <NavLink to={"order"} className={style.btn}>
           Перейти к оформлению

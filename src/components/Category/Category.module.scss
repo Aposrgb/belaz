@@ -7,6 +7,7 @@
   justify-content: center;
 }
 .card {
+  width: 30%;
   background: #ffffff;
   border-radius: 10px;
   @include fluid(padding-bottom, 10px, 15px);
@@ -17,17 +18,19 @@
     margin-right: 0;
   }
   @media screen and (max-width: $breakpoint-md) {
-    width: 43%;
+    width: 100%;
     padding-left: 5px;
     padding-right: 5px;
   }
 }
 .img {
   width: 100%;
+  
   @include fluid(height, 160px, 200px);
   object-fit: cover;
   object-position: center;
   @include fluid(margin-bottom, 7px, 10px);
+  
 }
 .title {
   font-weight: 700;

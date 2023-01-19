@@ -38,6 +38,9 @@
   @include fluid(font-size, 12px, 14px);
   color: #333;
   width: 500px;
+  @media screen and (max-width: $breakpoint-md) {
+    width: 100%;
+  }
 }
 .form {
   display: flex;
