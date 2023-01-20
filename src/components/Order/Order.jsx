@@ -3,7 +3,7 @@ import style from "./Order.module.scss";
 import BasketSidebar from "../BasketSidebar/BasketSidebar.jsx";
 import OrderPay from "./OrderPay.jsx";
 import OrderDelivery from "./OrderDelivery.jsx";
-import { NavLink } from "react-router-dom";
+import { Navigate, NavLink, useNavigate } from "react-router-dom";
 import Title from "../Title/Title.jsx";
 import Product from "../Product/Product.jsx";
 import truck from "../../assets/svg/truck.svg";
@@ -46,6 +46,7 @@ const data = [
 ];
 
 const OrderContainer = (props) => {
+  const navigate = useNavigate();
   const [basketProduct, setBasketProduct] = useState([]);
   const [loading, setLoading] = useState(false);
   const [chosenDelivery, setchosenDelivery] = useState(data[0].id);
@@ -72,19 +73,28 @@ const OrderContainer = (props) => {
   const handleChangeChecked = (e) => setChecked(e.target.checked);
   const handleOrder = () => {
     const token = localStorage.token;
-    const firstProduct = basketProduct[0];
-    const address = city + " " + street + " " + houseNum + " " + aptNum  
+    const address = city + " " + street + " " + houseNum + " " + aptNum;
     Api.post(
-      "api/purchase/" + firstProduct.product.id,
+      "api/purchase/",
       {
-        count: firstProduct.count,
+        products: basketProduct.map(basket => {
+          return {
+            count: basket.count,
+            productId: basket.product.id
+          }
+        }),
         name: firstname,
         surname: surname,
         phone: phone,
         address: chosenDelivery === 4 ? address : " ",
+        deliveryService: chosenDelivery,
       },
       { headers: { apiKey: token } }
-    );
+    ).then((res) => {
+      if (res.status === 200) {
+        // navigate("/lk/order/");
+      }
+    });
   };
 
   const handleChangeCity = (e) => setCity(e.target.value);
@@ -130,28 +140,28 @@ const OrderContainer = (props) => {
             data={data}
           />
           {chosenDelivery === 4 && (
-            <div style={{ width: 400 }}>
+            <div className={style.inputOrder}>
               <Input
-              placeholder="Город"
-                style={{ "margin-bottom": "16px" }}
+                placeholder="Город"
+                style={{ marginBottom: "16px" }}
                 onChange={handleChangeCity}
                 value={city}
               />
               <Input
-              placeholder="Улица"
-                style={{ "margin-bottom": "16px" }}
+                placeholder="Улица"
+                style={{ marginBottom: "16px" }}
                 onChange={handleChangeStreet}
                 value={street}
               />
               <Input
-              placeholder="Дом"
-                style={{ "margin-bottom": "16px" }}
+                placeholder="Дом"
+                style={{ marginBottom: "16px" }}
                 onChange={handleChangeHouseNum}
                 value={houseNum}
               />
               <Input
-              placeholder="Квартира"
-                style={{ "margin-bottom": "16px" }}
+                placeholder="Квартира"
+                style={{ marginBottom: "16px" }}
                 onChange={handleChangeAptNum}
                 value={aptNum}
               />

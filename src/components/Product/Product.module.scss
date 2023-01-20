@@ -118,6 +118,9 @@
 .sortFlex {
   display: flex;
   align-items: center;
+  @media screen and (max-width: $breakpoint-md) {
+    flex-direction: column;
+  }
 }
 
 .flexBetween {
@@ -130,11 +133,7 @@
     width: 100%;
   }
 }
-.select {
-  @include fluid(width, 170px, 210px);
-  @include fluid(height, 20px, 40px);
-  margin-left: 10px !important;
-}
+
 .filter {
   display: flex;
   flex-direction: column;

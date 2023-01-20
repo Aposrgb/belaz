@@ -5,23 +5,23 @@ const LkBlockSetting = () => {
   const handleLogout = () => {
     localStorage.removeItem("token");
     setTimeout(() => {
-      window.location.reload()
+      window.location.reload();
     }, 1000);
   };
 
   return (
     <div className={style.blockNav}>
-      <div className={style.title}>Аккаунт</div>
-
-      <NavLink
-        className={({ isActive }) =>
-          isActive ? `${style.link} ${style.active}` : `${style.link} `
-        }
-        to="setting/"
-      >
-        Изменить профиль
-      </NavLink>
-      {/* На текущий момент не реализована страница уведомлений
+      <p className={style.title}>Аккаунт</p>
+      <div className={style.links}>
+        <NavLink
+          className={({ isActive }) =>
+            isActive ? `${style.link} ${style.active}` : `${style.link} `
+          }
+          to="setting/"
+        >
+          Изменить профиль
+        </NavLink>
+        {/* На текущий момент не реализована страница уведомлений
         <NavLink
         className={({ isActive }) =>
           isActive ? `${style.link} ${style.active}` : `${style.link} `
@@ -30,15 +30,16 @@ const LkBlockSetting = () => {
       >
         Уведомления
       </NavLink> */}
-      <NavLink
-        onClick={handleLogout}
-        className={({ isActive }) =>
-          isActive ? `${style.link} ${style.active}` : `${style.link} `
-        }
-        to="/"
-      >
-        Выход
-      </NavLink>
+        <NavLink
+          onClick={handleLogout}
+          className={({ isActive }) =>
+            isActive ? `${style.link} ${style.active}` : `${style.link} `
+          }
+          to="/"
+        >
+          Выход
+        </NavLink>
+      </div>
     </div>
   );
 };

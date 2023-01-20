@@ -43,10 +43,8 @@ const ProductActual = (props) => {
       <div className={style.flexBetween}>
         <TitleActual />
         <div className={style.sortFlex}>
-          <div>
-            <ProductSelectSort />
-            <LineOrBlock line={line} setLine={setLine} />
-          </div>
+          <ProductSelectSort />
+          <LineOrBlock line={line} setLine={setLine} />
         </div>
       </div>
       <div className="product">

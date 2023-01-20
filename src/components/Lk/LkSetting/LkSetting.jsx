@@ -15,7 +15,7 @@ let mapStateToProps = (state) => {
 };
 
 const LkSettingContainer = (props) => {
-  const [firstname, setFirstName] = useState("");
+  const [name, setName] = useState("");
   const [surname, setSurname] = useState("");
   const [patronymic, setPatronymic] = useState("");
   const [dateBirth, setDateBirth] = useState(undefined);
@@ -28,7 +28,7 @@ const LkSettingContainer = (props) => {
   const [address, setAddress] = useState("");
 
   useEffect(() => {
-    setFirstName(props.personInfo.firstname ?? "");
+    setName(props.personInfo.firstname ?? "");
     setSurname(props.personInfo.surname ?? "");
     setPatronymic(props.personInfo.patronymic ?? "");
     setDateBirth(props.personInfo.dateBirth ?? undefined);
@@ -41,7 +41,7 @@ const LkSettingContainer = (props) => {
     setAddress(props.personInfo.address ?? "");
   }, [props.personInfo]);
 
-  const handleChangeFirstName = (e) => setFirstName(e.target.value);
+  const handleChangeName = (e) => setName(e.target.value);
   const handleChangeSurname = (e) => setSurname(e.target.value);
   const handleChangePatronymic = (e) => setPatronymic(e.target.value);
   const handleDateBirth = (value) => {
@@ -60,7 +60,7 @@ const LkSettingContainer = (props) => {
     Api.patch(
       "/api/user",
       {
-        firstname,
+        name,
         surname,
         patronymic,
         email,
@@ -74,9 +74,9 @@ const LkSettingContainer = (props) => {
       },
       { headers: { apiKey: token } }
     ).then((res) => {
-     if(res.status === 200) {
-      window.location.reload()
-     }
+      if (res.status === 200) {
+        window.location.reload();
+      }
     });
   };
 
@@ -87,8 +87,8 @@ const LkSettingContainer = (props) => {
         <div className={style.input}>
           <div className={style.inputName}>Имя</div>
           <Input
-            onChange={handleChangeFirstName}
-            value={firstname}
+            onChange={handleChangeName}
+            value={name}
             className={style.inputItem}
           />
         </div>

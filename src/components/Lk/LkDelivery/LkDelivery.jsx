@@ -14,27 +14,23 @@ const LkDelivery = (props) => {
     })
   }, []);
 
-  console.log('====================================');
-  console.log(orders);
-  console.log('====================================');
-
   let item = orders.map((e) => (
     <LkDeliveryItem
       id={e.id}
       key={e.id}
-      statusDelivery={e.statusDelivery}
-      dateDelivery={e.dateDelivery}
-      img={e.img}
-      nameProduct={e.nameProduct}
-      productOrder={e.productOrder}
-      dateRegistration={e.dateRegistration}
-      paymentState={e.paymentState}
-      address={e.address}
-      receiverName={e.receiverName}
-      receiverSurname={e.receiverSurname}
-      phoneNumber={e.phoneNumber}
-      addressDelivery={e.addressDelivery}
-      deliveryService={e.deliveryService}
+      statusDelivery={e.deliveryStatus}
+      dateDelivery={e.dateArrive}
+      img={e.product.img}
+      nameProduct={e.product.title}
+      productOrder={e.price}
+      dateRegistration={e.datePurchase}
+      paymentState={e.purchaseStatusName}
+      address={e.deliveryAddress}
+      receiverName={e.name}
+      receiverSurname={e.surname}
+      phoneNumber={e.phone}
+      addressDelivery={e.deliveryAddress}
+      deliveryService={e.deliveryServiceName}
     />
   ));
   return (

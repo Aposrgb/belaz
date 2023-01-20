@@ -1,0 +1,14 @@
+@import "../../style/Mixins.scss";
+
+.productSelect {
+  display: flex;
+  align-items: center;
+}
+
+.select {
+  @include fluid(width, 170px, 210px);
+  @include fluid(height, 20px, 40px);
+  margin-left: 10px !important;
+  display: flex !important;
+  align-items: center !important;
+}

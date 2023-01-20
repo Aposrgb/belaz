@@ -1,6 +1,6 @@
 @import "../../style/Mixins.scss";
 
-.content{
+.content {
   display: flex;
   justify-content: space-between;
   @include fluid(margin-bottom, 50px, 100px);
@@ -8,157 +8,206 @@
     flex-direction: column;
   }
 }
-.block{
+.block {
   width: 68%;
   @media screen and (max-width: $breakpoint-md) {
     width: 100%;
   }
 }
-.sidebar{
+.sidebar {
   position: relative;
   width: 30%;
+  @media screen and (max-width: $breakpoint-md) {
+    padding-top: 55px;
+    width: 100%;
+  }
 }
-.flexBlock{
+.flexBlock {
   display: flex;
-  background: #FBFBFB;
+  background: #fbfbfb;
   border-radius: 10px;
   align-items: center;
-  @include fluid(padding-left, 10px,20px);
+  @include fluid(padding-left, 10px, 20px);
   @include fluid(padding-bottom, 7px, 12px);
   @include fluid(margin-bottom, 7px, 10px);
 }
-.delete{
+.delete {
   color: red;
   @include fluid(margin-top, 7px, 15px);
 
-  @include fluid(font-size,12px, 14px);
+  @include fluid(font-size, 12px, 14px);
   @include fluid(margin-left, 15px, 30px);
-
 }
-.card{
+.card {
   display: flex;
   align-items: center;
-  background: #FBFBFB;
+  background: #fbfbfb;
   border-radius: 10px;
   @include fluid(padding-left, 10px, 20px);
   @include fluid(margin-bottom, 7px, 10px);
   @include fluid(padding-right, 20px, 35px);
+  @media screen and (max-width: $breakpoint-md) {
+    padding-left: 10px;
+    width: 100%;
+    height: 230px;
+    margin-bottom: 16px;
+  }
 }
-.img{
+.img {
   @include fluid(width, 170px, 230px);
   @include fluid(height, 170px, 215px);
-  background: #ECECEC;
+  background: #ececec;
   object-fit: contain;
   object-position: center;
   @include fluid(margin-left, 10px, 20px);
   @include fluid(margin-right, 30px, 65px);
+  @media screen and (max-width: $breakpoint-md) {
+    width: 142px;
+    height: 100%;
+    margin-right: 15px;
+  }
 }
-.top{
+.top {
   display: flex;
   align-items: center;
   justify-content: space-between;
-
+  @media screen and (max-width: $breakpoint-md) {
+    flex-direction: column;
+  }
 }
-.info{
+.info {
   @include fluid(height, 150px, 185px);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  width: 50%;
+  @media screen and (max-width: $breakpoint-md) {
+    height: 100%;
+  }
 }
-.productName{
-  @include fluid(font-size,12px, 14px);
+.productName {
+  @include fluid(font-size, 12px, 14px);
   font-weight: 500;
   @include fluid(margin-bottom, 7px, 10px);
 }
-.item{
+.item {
   width: 58%;
+  @media screen and (max-width: $breakpoint-md) {
+    width: 100%;
+  }
 }
-.star{
+.star {
   @include fluid(width, 10px, 14px);
   @include fluid(height, 10px, 14px);
   object-fit: contain;
   margin-right: 5px;
 }
-.grabe{
+.grabe {
   display: flex;
   align-items: center;
-  @include fluid(font-size,10px, 12px);
+  @include fluid(font-size, 10px, 12px);
   color: #858585;
 }
 
-.settingText{
-  @include fluid(font-size,12px, 14px);
+.settingText {
+  @include fluid(font-size, 12px, 14px);
   color: #000;
   font-weight: 400;
   cursor: pointer;
-  transition: .38s ease-in-out;
+  transition: 0.38s ease-in-out;
   @include fluid(margin-bottom, 7px, 10px);
-  &:last-child{
+  &:last-child {
     margin-bottom: 0;
   }
-  &:hover{
-    color: #00FFC2;
+  &:hover {
+    color: #00ffc2;
   }
 }
-.under{
+
+.setting {
+  @media screen and (max-width: $breakpoint-md) {
+    display: flex;
+    gap: 8px;
+    width: 100%;
+    margin-top: 8px;
+  }
+}
+
+.under {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  @media screen and (max-width: $breakpoint-md) {
+    align-items: flex-end;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+  }
 }
-.counterText{
-  @include fluid(font-size,12px, 14px);
+.counterText {
+  @include fluid(font-size, 12px, 14px);
   font-weight: 500;
   margin-bottom: 5px;
+  @media screen and (max-width: $breakpoint-md) {
+    margin-right: 8px;
+  }
 }
-.end{
+
+.count {
+  @media screen and (max-width: $breakpoint-md) {
+    margin-top: 16px;
+  }
+}
+
+.end {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+  @media screen and (max-width: $breakpoint-md) {
+    margin-right: 8px;
+  }
 }
-.total{
-  @include fluid(font-size,12px, 14px);
+.total {
+  @include fluid(font-size, 12px, 14px);
   font-weight: 500;
   @include fluid(margin-bottom, 4px, 5px);
 }
-.prise{
-  @include fluid(font-size,14px, 16px);
+.prise {
+  @include fluid(font-size, 14px, 16px);
   font-weight: 600;
-
 }
-.blockNotFound{
+.blockNotFound {
   height: 30vh;
   width: 100%;
   display: flex;
-  align-items: center;justify-content: center;
+  align-items: center;
+  justify-content: center;
 }
-.shop{
+.shop {
   @include fluid(width, 40px, 50px);
   @include fluid(height, 40px, 50px);
   object-fit: contain;
   object-position: center;
   @include fluid(margin-right, 15px, 25px);
 }
-.column{
+.column {
   display: flex;
   flex-direction: column;
   align-items: center;
-  &:hover{
-    div{
-      color: #00FFC2;
-
+  &:hover {
+    div {
+      color: #00ffc2;
     }
   }
-  div{
+  div {
     color: #000;
-    transition: .38s ease-in-out;
-    &:last-child{
-      color: #00FFC2;
+    transition: 0.38s ease-in-out;
+    &:last-child {
+      color: #00ffc2;
     }
-
   }
 }
-.basket{
-  @include fluid(font-size,14px, 16px);
+.basket {
+  @include fluid(font-size, 14px, 16px);
   font-weight: 700;
-
 }

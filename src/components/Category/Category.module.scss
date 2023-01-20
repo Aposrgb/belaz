@@ -25,12 +25,11 @@
 }
 .img {
   width: 100%;
-  
+
   @include fluid(height, 160px, 200px);
   object-fit: cover;
   object-position: center;
   @include fluid(margin-bottom, 7px, 10px);
-  
 }
 .title {
   font-weight: 700;
@@ -78,7 +77,7 @@
   display: flex;
   align-items: center;
   @media screen and (max-width: $breakpoint-md) {
-    padding-top: 20px;
+    margin: 20px 0 0 auto;
   }
 }
 .icon {
@@ -103,11 +102,17 @@
   @include fluid(height, 150px, 200px);
   object-fit: contain;
   @include fluid(margin-right, 30px, 55px);
+  @media screen and (max-width: $breakpoint-md) {
+    width: 100%;
+  }
 }
 .cardLine {
   width: 100%;
   display: flex;
   @include fluid(margin-bottom, 15px, 20px);
+  @media screen and (max-width: $breakpoint-md) {
+    flex-direction: column;
+  }
 }
 .titleLong {
   @include fluid(font-size, 14px, 16px);
@@ -134,6 +139,9 @@
 .flexEnd {
   display: flex;
   justify-content: flex-end;
+  @media screen and (max-width: $breakpoint-md) {
+    justify-content: center;
+  }
 }
 .navLong {
   @include fluid(font-size, 11px, 12px);

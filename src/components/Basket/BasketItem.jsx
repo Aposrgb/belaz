@@ -8,12 +8,11 @@ import { Api } from "../../api/api";
 const BasketItem = (props) => {
   const [count, setCount] = useState(props.count);
 
-  const isNeedUpdateCount = props.count !== count
+  const isNeedUpdateCount = props.count !== count;
 
   useEffect(() => {
     const token = localStorage.token;
     if (isNeedUpdateCount) {
-
       Api.patch(
         "api/basket/" + props.product.id,
         { count },
@@ -51,7 +50,7 @@ const BasketItem = (props) => {
 
   return (
     <div className={style.card}>
-      <Checkbox className={style.checkbox} />
+      {/* <Checkbox className={style.checkbox} /> */}
       <img src={props.product.img} className={style.img} />
       <div className={style.info}>
         <div className={style.top}>
@@ -72,7 +71,7 @@ const BasketItem = (props) => {
           </div>
         </div>
         <div className={style.under}>
-          <div>
+          <div className={style.count}>
             <div className={style.counterText}>Количество:</div>
             <Counter count={count} setCount={setCount} />
           </div>

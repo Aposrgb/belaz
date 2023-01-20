@@ -7,6 +7,15 @@
   }
 }
 
+.links {
+  display: flex;
+  flex-direction: column;
+  @media screen and (max-width: $breakpoint-md) {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+
 .block {
   width: 23%;
   @media screen and (max-width: $breakpoint-md) {
@@ -46,12 +55,14 @@
   @include fluid(margin-bottom, 7px, 10px);
 }
 .link {
-  width: 100%;
   flex-direction: column;
   @include fluid(font-size, 12px, 14px);
   color: #000;
   font-weight: 500;
   @include fluid(margin-bottom, 7px, 10px);
+  @media screen and (max-width: $breakpoint-md) {
+    margin: 0 16px 4px 0;
+  }
 }
 .active {
   color: #00cf9d;

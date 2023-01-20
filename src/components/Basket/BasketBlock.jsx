@@ -9,12 +9,12 @@ const BasketBlock = (props) => {
 
   return (
     <>
-      <div className={style.flexBlock}>
+      {/* <div className={style.flexBlock}>
         <Checkbox id="all" type="checkbox">
           Выбрать все
         </Checkbox>
         <div className={style.delete}>Удалить выбранные </div>
-      </div>
+      </div> */}
       {props.loading === false && (
         <>{props.product.length === 0 ? <BasketNotFound /> : item}</>
       )}

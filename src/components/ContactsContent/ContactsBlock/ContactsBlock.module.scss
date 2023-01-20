@@ -70,6 +70,9 @@
   &::placeholder {
     color: #ccc;
   }
+  @media screen and (max-width: $breakpoint-md) {
+    width: 100%;
+  }
 }
 .textarea {
   outline: none;
@@ -148,5 +151,5 @@
   @include fluid(height, 200px, 300px);
   right: 0;
   top: 0;
-  z-index: 1;
+  z-index: -1;
 }

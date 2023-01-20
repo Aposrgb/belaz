@@ -10,8 +10,10 @@
   color: #fff;
   transition: 0.38s ease-in-out;
   position: relative;
+  padding-top: 12px;
   cursor: pointer;
   &:before {
+    padding-top: 1px;
     width: 0%;
     height: 5px;
     background: $green;
@@ -27,6 +29,9 @@
     &:before {
       width: 100%;
     }
+  }
+  @media screen and (max-width: $breakpoint-md) {
+    padding-top: 12px;
   }
 }
 .logo {
