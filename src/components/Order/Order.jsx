@@ -75,7 +75,7 @@ const OrderContainer = (props) => {
     const token = localStorage.token;
     const address = city + " " + street + " " + houseNum + " " + aptNum;
     Api.post(
-      "api/purchase/",
+      "api/purchase",
       {
         products: basketProduct.map(basket => {
           return {
