@@ -86,13 +86,13 @@ const OrderContainer = (props) => {
         name: firstname,
         surname: surname,
         phone: phone,
-        address: chosenDelivery === 4 ? address : " ",
+        address: chosenDelivery === 4 ? `${address}` : " ",
         deliveryService: chosenDelivery,
       },
       { headers: { apiKey: token } }
     ).then((res) => {
       if (res.status === 200) {
-        // navigate("/lk/order/");
+         navigate("/lk/order/");
       }
     });
   };
