@@ -86,7 +86,7 @@ const OrderContainer = (props) => {
         name: firstname,
         surname: surname,
         phone: phone,
-        address: chosenDelivery === 4 ? `${address}` : " ",
+        address: chosenDelivery === 4 ? address : " ",
         deliveryService: chosenDelivery,
       },
       { headers: { apiKey: token } }
