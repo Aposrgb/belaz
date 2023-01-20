@@ -9,7 +9,6 @@ const LkDelivery = (props) => {
   useEffect(() => {
     const token = localStorage.token;
     Api.get("/api/purchase", { headers: { apiKey: token } }).then(res => {
-
       setOrders(res.data.data)
     })
   }, []);

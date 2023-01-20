@@ -6,7 +6,7 @@ const LkDeliveryItem = (props) => {
   const handleCancelOrder = () => {
     const token = localStorage.token;
     Api.patch("api/purchase/" + props.id, {}, { headers: { apiKey: token } }).then(res => {
-        if(res.status === 200){
+        if(res.status === 204){
             window.location.reload()
         }
     })
