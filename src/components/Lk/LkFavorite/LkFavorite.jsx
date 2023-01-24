@@ -17,10 +17,21 @@ const LkFavorite = (props) => {
     });
   }, []);
 
+  const handleAddFavorite = (id) => {
+    const newFavoriteList = [...favorites, { id }];
+    setFavorites(newFavoriteList);
+  };
+
+  const handleRemoveFavorite = (id) => {
+    const newFavoriteList = favorites.filter(
+      (favorite) => favorite.id !== id
+    );
+    setFavorites(newFavoriteList);
+  };
+
   let products = favorites?.map((e) =>
     line ? (
       <ProductItemLine
-        isFavorite
         id={e.id}
         key={e.id}
         title={e.title}
@@ -30,10 +41,12 @@ const LkFavorite = (props) => {
         totalGrabe={e.totalGrabe}
         price={e.price}
         description={e.description}
+        isFavorite
+        onAdd={handleAddFavorite}
+        onRemove={handleRemoveFavorite}
       />
     ) : (
       <ProductItem
-        isFavorite
         id={e.id}
         key={e.id}
         title={e.title}
@@ -42,6 +55,9 @@ const LkFavorite = (props) => {
         grabe={e.grabe}
         totalGrabe={e.totalGrabe}
         price={e.price}
+        isFavorite
+        onAdd={handleAddFavorite}
+        onRemove={handleRemoveFavorite}
       />
     )
   );

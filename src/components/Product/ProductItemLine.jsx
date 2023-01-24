@@ -6,19 +6,48 @@ import favorite from "../../assets/svg/favorite.svg";
 import favoriteRed from "../../assets/svg/favorite-red.svg";
 import picture from "../../assets/images/nullPicture.png";
 import { Api } from "../../api/api";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const ProductItemLine = (props) => {
   const navigate = useNavigate();
-  const location = useLocation();
-  const isFavoritePage = location.pathname.includes("favorite");
-  const handleRemoveFavorite = (e) => {
+
+  const handleAddFavorite = () => {
+    const token = localStorage.token;
+    Api.put(
+      "api/favorite/" + props.id,
+      {},
+      { headers: { apiKey: token } }
+    ).then((res) => {
+      props.onAdd?.(props.id);
+    });
+  };
+
+  const handleRemoveFavorite = () => {
+    const token = localStorage.token;
+    Api.delete("api/favorite/" + props.id, { headers: { apiKey: token } }).then(
+      (res) => {
+        props.onRemove?.(props.id);
+      }
+    );
+  };
+
+  const handleClickFavorite = (e) => {
     e.stopPropagation();
-    if (isFavoritePage) {
-      const token = localStorage.token;
-      Api.delete("api/favorite/" + props.id, { headers: { apiKey: token } });
-      window.location.reload();
+    if (props.isFavorite) {
+      handleRemoveFavorite();
+      return;
     }
+    handleAddFavorite();
+  };
+
+  const handleAddInBasket = (e) => {
+    e.stopPropagation();
+    const token = localStorage.token;
+    Api.put(
+      "api/basket/" + props.id,
+      { count: 1 },
+      { headers: { apiKey: token } }
+    );
   };
 
   const redirectToProduct = (e) => {
@@ -55,13 +84,15 @@ const ProductItemLine = (props) => {
           <div className={style.lineValue}>{props.price} ₽</div>
           <div className={style.sortFlex}>
             <img
-              onClick={handleRemoveFavorite}
+              onClick={handleClickFavorite}
               alt="favorite"
               className={style.lineFavorite}
               src={props.isFavorite ? favoriteRed : favorite}
             />
             <div className={style.lineBuy}>
-              <div className={style.lineBuyText}>В корзину</div>
+              <div onClick={handleAddInBasket} className={style.lineBuyText}>
+                В корзину
+              </div>
               <img alt="buyIcon" src={buy} className={style.lineBuyIcon} />
             </div>
           </div>

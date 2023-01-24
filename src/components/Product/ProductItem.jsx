@@ -5,31 +5,32 @@ import buy from "../../assets/svg/buy.svg";
 import favorite from "../../assets/svg/favorite.svg";
 import favoriteRed from "../../assets/svg/favorite-red.svg";
 import picture from "../../assets/images/nullPicture.png";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { Api } from "../../api/api";
 
 const ProductItem = (props) => {
   const navigate = useNavigate();
-  const location = useLocation();
-  const isFavoritePage = location.pathname.includes("favorite");
 
   const redirectToProduct = (e) => {
     navigate("/product/" + props.id);
   };
   const handleAddFavorite = () => {
     const token = localStorage.token;
-    Api.put("api/favorite/" + props.id, {}, { headers: { apiKey: token } });
+    Api.put("api/favorite/" + props.id, {}, { headers: { apiKey: token } }).then(res => {
+      props.onAdd?.(props.id)
+    })
   };
 
   const handleRemoveFavorite = () => {
     const token = localStorage.token;
-    Api.delete("api/favorite/" + props.id, { headers: { apiKey: token } });
-    window.location.reload();
+    Api.delete("api/favorite/" + props.id, { headers: { apiKey: token } }).then(res => {
+      props.onRemove?.(props.id)
+    })
   };
 
   const handleClickFavorite = (e) => {
     e.stopPropagation();
-    if (isFavoritePage) {
+    if (props.isFavorite) {
       handleRemoveFavorite();
       return;
     }

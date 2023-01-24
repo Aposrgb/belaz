@@ -3,9 +3,7 @@ import style from "./ContactsMini.module.scss";
 const ContactsMin = (props) => {
   return (
     <div className={style.block}>
-      <a href="https://wa.me/73432875732" className={style.link}>
-        +7 (343) 287-57-32
-      </a>
+      <a className={style.link}>+7 (343) 287-57-32</a>
       <a href="https://wa.me/79655327026" className={style.link}>
         +7 (965) 532-70-26
       </a>

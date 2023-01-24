@@ -10,7 +10,7 @@
   color: #fff;
   transition: 0.38s ease-in-out;
   position: relative;
-  padding-top: 12px;
+  padding-top: 14px;
   cursor: pointer;
   &:before {
     padding-top: 1px;
@@ -19,7 +19,7 @@
     background: $green;
     position: absolute;
     content: "";
-    @include fluid(top, 37px, 49px);
+   @include fluid(top, 37px, 49px);
     left: 50%;
     transform: translate(-50%);
     transition: 0.38s ease-in-out;
@@ -105,4 +105,9 @@
   &:hover {
     color: #00ffc2;
   }
+}
+
+.error {
+  color: red;
+  text-align: center;
 }
