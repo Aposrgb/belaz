@@ -17,7 +17,7 @@ const LkDelivery = (props) => {
     <LkDeliveryItem
       id={e.id}
       key={e.id}
-      statusDelivery={e.deliveryStatus}
+      statusDelivery={e.purchaseStatusName}
       dateDelivery={e.dateArrive}
       img={e.product.img}
       nameProduct={e.product.title}
