@@ -15,9 +15,6 @@ export default function DetailProduct(props) {
   useEffect(() => {
     if (props.detail?.id && localStorage.token) {
       AllProductsFavorite().then((res) => {
-        console.log("====================================");
-        console.log(res);
-        console.log("====================================");
         const currentFavoriteProduct = res.data.find(
           (favorite) => favorite.id === props.detail?.id
         );
@@ -80,9 +77,6 @@ export default function DetailProduct(props) {
       setError("");
     }, 3000);
   };
-  console.log("====================================");
-  console.log(props);
-  console.log("====================================");
   return (
     <>
       <div className={style.flex}>
