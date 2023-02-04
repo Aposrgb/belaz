@@ -11,6 +11,7 @@
 .card {
   background: #ffffff;
   border-radius: 10px;
+  
   @include fluid(padding-bottom, 10px, 15px);
   @include fluid(margin-bottom, 10px, 20px);
   @include fluid(width, 160px, 185px);
@@ -41,6 +42,8 @@
 }
 .info {
   width: 100%;
+  margin-top: 22px;
+  margin-bottom: 20px;
 }
 .special {
   position: absolute;
@@ -118,8 +121,9 @@
 .sortFlex {
   display: flex;
   align-items: center;
+  padding-top: 15px;
   @media screen and (max-width: $breakpoint-md) {
-    flex-direction: column;
+    flex-direction: inherit;
   }
 }
 

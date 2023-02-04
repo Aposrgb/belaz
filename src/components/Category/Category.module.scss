@@ -9,9 +9,12 @@
 .card {
   width: 30%;
   background: #ffffff;
-  border-radius: 10px;
   @include fluid(padding-bottom, 10px, 15px);
   @include fluid(margin-bottom, 10px, 20px);
+  border: solid 1px;
+  border-color: aqua;
+  border-radius: 10px;
+  padding: 10px;
   width: 18.1%;
   margin-right: 2.3%;
   &:nth-child(5n) {
@@ -75,9 +78,12 @@
 }
 .flex {
   display: flex;
+  padding-top: 15px;
+  padding-bottom: 12px;
   align-items: center;
   @media screen and (max-width: $breakpoint-md) {
     margin: 20px 0 0 auto;
+    padding-top: 5px;
   }
 }
 .icon {
@@ -109,6 +115,10 @@
 .cardLine {
   width: 100%;
   display: flex;
+  border: solid 1px;
+  border-color: aqua;
+  border-radius: 10px;
+  padding: 10px;
   @include fluid(margin-bottom, 15px, 20px);
   @media screen and (max-width: $breakpoint-md) {
     flex-direction: column;
