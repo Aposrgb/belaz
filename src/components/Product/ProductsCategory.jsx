@@ -62,7 +62,7 @@ export default function ProductsCategory(props) {
                 Function={props.Products}
                 current={current}
                 setCurrent={setCurrent}
-                total={props.products?.pageCount}
+                total={props.products?.count}
               />
             </div>
           </>

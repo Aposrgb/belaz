@@ -16,16 +16,22 @@ const ProductItem = (props) => {
   };
   const handleAddFavorite = () => {
     const token = localStorage.token;
-    Api.put("api/favorite/" + props.id, {}, { headers: { apiKey: token } }).then(res => {
-      props.onAdd?.(props.id)
-    })
+    Api.put(
+      "api/favorite/" + props.id,
+      {},
+      { headers: { apiKey: token } }
+    ).then((res) => {
+      props.onAdd?.(props.id);
+    });
   };
 
   const handleRemoveFavorite = () => {
     const token = localStorage.token;
-    Api.delete("api/favorite/" + props.id, { headers: { apiKey: token } }).then(res => {
-      props.onRemove?.(props.id)
-    })
+    Api.delete("api/favorite/" + props.id, { headers: { apiKey: token } }).then(
+      (res) => {
+        props.onRemove?.(props.id);
+      }
+    );
   };
 
   const handleClickFavorite = (e) => {
@@ -52,9 +58,7 @@ const ProductItem = (props) => {
       <div className={style.contain}>
         <img
           src={
-            props.img === null
-              ? picture
-              : "https://a.mpstats.store/" + props.img
+            props.img === null ? picture : "http://80.243.140.178/" + props.img
           }
           className={style.productImg}
           alt="product"

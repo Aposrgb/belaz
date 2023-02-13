@@ -12,6 +12,11 @@ import PaginationBlock from "../Pagination/PaginationBlock.jsx";
 const ProductDiscount = (props) => {
   const [line, setLine] = useState(false);
   const [current, setCurrent] = useState(1);
+
+  console.log("====================================");
+  console.log(props);
+  console.log("====================================");
+
   let item = props.availables.data?.map((e) => (
     <ProductItem
       id={e.id}
@@ -64,7 +69,7 @@ const ProductDiscount = (props) => {
             Function={props.GetAvailables}
             current={current}
             setCurrent={setCurrent}
-            total={props.availables?.pageCount}
+            total={props.availables?.count}
           />
         </div>
       </div>

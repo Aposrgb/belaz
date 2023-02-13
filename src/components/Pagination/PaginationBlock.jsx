@@ -13,10 +13,13 @@ const PaginationBlock = (props) => {
         <></>
       ) : (
         <Pagination
+          
+          showSizeChanger={false}
           className={style.pagination}
           current={props.current}
           onChange={onChange}
           total={props.total}
+          
         />
       )}
     </>

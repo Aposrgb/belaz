@@ -65,7 +65,7 @@ const ProductActual = (props) => {
             Function={props.GetActual}
             current={current}
             setCurrent={setCurrent}
-            total={props.product?.pageCount}
+            total={props.product?.count}
           />
         </div>
       </div>
