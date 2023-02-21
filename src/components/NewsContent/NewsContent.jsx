@@ -21,7 +21,7 @@ const NewsContent = (props) => {
                         Новости
                     </div>
                     <TabList className={style.tabs}>
-                        <Tab selectedClassName={style.tabActive} onClick={()=>props.setYear(2022)}  className={style.tab}>За все время</Tab>
+                        <Tab selectedClassName={style.tabActive} onClick={()=>props.setYear('')}  className={style.tab}>За все время</Tab>
                         <Tab selectedClassName={style.tabActive} onClick={()=>props.setYear(2022)} className={style.tab}>2022</Tab>
                         <Tab selectedClassName={style.tabActive}  onClick={()=>props.setYear(2021)} className={style.tab}>2021</Tab>
                         <Tab selectedClassName={style.tabActive}  onClick={()=>props.setYear(2020)} className={style.tab}>2020</Tab>

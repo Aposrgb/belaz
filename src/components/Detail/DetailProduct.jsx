@@ -82,7 +82,7 @@ export default function DetailProduct(props) {
       <div className={style.flex}>
         <img
           className={style.img}
-          src={"http://80.243.140.178/" + props.detail?.img}
+          src={"https://agregatekb.ru/" + props.detail?.img}
         />
         <div className={style.item}>
           <div className={style.grabe}>

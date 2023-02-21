@@ -7,7 +7,7 @@ import { useDisableScroll } from "../hooks/useDisableScroll.js";
 import { GetSearch } from "../store/slice/searcSlice.js";
 
 const News = (props) => {
-  const [year, setYear] = useState(2022);
+  const [year, setYear] = useState('');
 
   useEffect(() => {
     props.GetNewsAll(1, 10, year);

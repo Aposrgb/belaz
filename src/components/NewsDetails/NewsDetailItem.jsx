@@ -12,7 +12,7 @@ const NewsDetailItem = (props) => {
     <div className={style.container}>
       <div className={style.bunner}>
         <img
-          src={"http://80.243.140.178/" + props.detail?.img}
+          src={"https://agregatekb.ru/" + props.detail?.img}
           className={style.bannerImg}
         />
         <div className={style.bannerTitle}>{props.detail?.name}</div>
