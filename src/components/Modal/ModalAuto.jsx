@@ -10,15 +10,11 @@ const ModalAuto = (props) => {
   const Auto = (email, password) => {
     Autorize(email, password)
       .then((res) => {
-        console.log("====================================");
-        console.log(res);
-        console.log("====================================");
-
         localStorage.setItem("token", res.data.data.token);
         window.location.reload();
       })
       .catch((error) => {
-        setErrorText(error.response.data.message);
+        setErrorText(error.response.data.message || error.response.data.detail);
       });
   };
 

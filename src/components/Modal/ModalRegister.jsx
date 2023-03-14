@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import style from "./Modal.module.scss";
-import { Registration } from "../../api/security";
+import { registration } from "../../api/security";
 const ModalRegister = (props) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -8,15 +8,19 @@ const ModalRegister = (props) => {
   const [surname, setSurname] = useState("");
   const [patronymic, setPatronymic] = useState("");
   const [phone, setPhone] = useState("");
+  const [errorText, setErrorText] = useState("");
 
-  const Reg = (email, password, name, surname, patronymic, phone) => {
-    Registration(email, password, name, surname, patronymic, phone).then(
-      (res) => {
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    registration(email, password, name, surname, patronymic, phone)
+      .then((res) => {
         if (res.data.token) {
           props.registrathion();
         }
-      }
-    );
+      })
+      .catch((error) => {
+        setErrorText(error.response.data.message || error.response.data.detail);
+      });
   };
 
   return (
@@ -26,66 +30,107 @@ const ModalRegister = (props) => {
         Зарегистрируйтесь и начните совершать покупки
       </div>
       <form className={style.form}>
-        <div className={style.input}>
+        <div
+          className={style.input}
+          style={!!errorText.length ? { borderColor: "red" } : {}}
+        >
           <input
+            required
             type="text"
             placeholder="Имя"
-            onChange={(e) => setName(e.target.value)}
+            onChange={(e) => {
+              setName(e.target.value);
+              setErrorText("");
+            }}
             value={name}
             className={style.inputItem}
           />
         </div>
-        <div className={style.input}>
+        <div
+          className={style.input}
+          style={!!errorText.length ? { borderColor: "red" } : {}}
+        >
           <input
+            required
             type="text"
             placeholder="Фамилия"
-            onChange={(e) => setSurname(e.target.value)}
+            onChange={(e) => {
+              setSurname(e.target.value);
+              setErrorText("");
+            }}
             value={surname}
             className={style.inputItem}
           />
         </div>
-        <div className={style.input}>
+        <div
+          className={style.input}
+          style={!!errorText.length ? { borderColor: "red" } : {}}
+        >
           <input
+            required
             type="text"
             placeholder="Отчество"
-            onChange={(e) => setPatronymic(e.target.value)}
+            onChange={(e) => {
+              setPatronymic(e.target.value);
+              setErrorText("");
+            }}
             value={patronymic}
             className={style.inputItem}
           />
         </div>
-        <div className={style.input}>
+        <div
+          className={style.input}
+          style={!!errorText.length ? { borderColor: "red" } : {}}
+        >
           <input
-            type="text"
+            required
+            type="email"
             placeholder="E-Mail"
-            onChange={(e) => setEmail(e.target.value)}
+            onChange={(e) => {
+              setEmail(e.target.value);
+              setErrorText("");
+            }}
             value={email}
             className={style.inputItem}
           />
         </div>
-        <div className={style.input}>
+        <div
+          className={style.input}
+          style={!!errorText.length ? { borderColor: "red" } : {}}
+        >
           <input
-            type="text"
+            required
+            type="tel"
             placeholder="Телефон"
-            onChange={(e) => setPhone(e.target.value)}
+            maxLength={12}
+            onChange={(e) => {
+              setPhone(e.target.value);
+              setErrorText("");
+            }}
             value={phone}
             className={style.inputItem}
           />
         </div>
-        <div className={style.input}>
+        <div
+          className={style.input}
+          style={!!errorText.length ? { borderColor: "red" } : {}}
+        >
           <input
+            required
             type="text"
             placeholder="Пароль"
-            onChange={(e) => setPassword(e.target.value)}
+            onChange={(e) => {
+              setPassword(e.target.value);
+              setErrorText("");
+            }}
             value={password}
             className={style.inputItem}
           />
         </div>
+        {!!errorText.length && <p className={style.error}>{errorText}</p>}
         <button
           className={style.btn}
-          onClick={(e) => {
-            e.preventDefault();
-            Reg(email, password, name, surname, patronymic, phone);
-          }}
+          onClick={handleSubmit}
         >
           Зарегистрироваться
         </button>

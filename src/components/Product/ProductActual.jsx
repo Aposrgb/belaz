@@ -12,8 +12,35 @@ import { GetActualFiltered } from "../../store/slice/actualSlice.js";
 const ProductActual = (props) => {
   const [line, setLine] = useState(false);
   const [current, setCurrent] = useState(1);
+  const [popularChoosenSorting, setPopularChoosenSorting] = useState("popular");
+  const [priceChoosenSorting, setPriceChoosenSorting] = useState("asc");
 
-  let item = props.product.data?.map((e) => (
+  let products = [...(props.product.data ?? [])];
+
+  if (products.length) {
+    if (popularChoosenSorting === "popular") {
+      products = products.sort((a, b) => a.rating - b.rating).reverse();
+    }
+    if (popularChoosenSorting === "not popular") {
+      products = products.sort((a, b) => a.rating - b.rating);
+    }
+    if (priceChoosenSorting === "asc") {
+      products = products.sort((a, b) => a.price - b.price).reverse();
+    }
+    if (priceChoosenSorting === "desc") {
+      products = products.sort((a, b) => a.price - b.price);
+    }
+  }
+
+  const handleChangePopular = (value) => {
+    setPopularChoosenSorting(value);
+  };
+
+  const handleChangePrice = (value) => {
+    setPriceChoosenSorting(value);
+  };
+
+  let item = products?.map((e) => (
     <ProductItem
       id={e.id}
       key={e.id}
@@ -25,7 +52,7 @@ const ProductActual = (props) => {
       price={e.price}
     />
   ));
-  let itemLine = props.product.data?.map((e) => (
+  let itemLine = products?.map((e) => (
     <ProductItemLine
       id={e.id}
       key={e.id}
@@ -44,7 +71,10 @@ const ProductActual = (props) => {
         <TitleActual />
         <div className={style.sortFlex}>
           <div>
-            <ProductSelectSort />
+            <ProductSelectSort
+              onChangePopular={handleChangePopular}
+              onChangePrice={handleChangePrice}
+            />
             <LineOrBlock line={line} setLine={setLine} />
           </div>
         </div>

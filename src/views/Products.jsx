@@ -5,6 +5,7 @@ import ProductsCategory from "../components/Product/ProductsCategory";
 import Preloader from "../components/Preloader/Preloader";
 import { useDisableScroll } from "../hooks/useDisableScroll.js";
 import {GetSearch} from "../store/slice/searcSlice.js";
+
 export default function Products(props) {
   const id = useParams();
 
@@ -19,6 +20,7 @@ export default function Products(props) {
       {props.productsLoader ? <Preloader /> : ""}
       <Search GetSearch={props.GetSearch} />
       <ProductsCategory
+        GetCategory={props.GetCategory}
         GetFilter={props.GetFilter}
         GetProducts={props.GetProducts}
         filter={props.filter}

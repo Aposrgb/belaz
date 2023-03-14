@@ -7,10 +7,39 @@ import ProductItemLine from "./ProductItemLine.jsx";
 import PaginationBlock from "../Pagination/PaginationBlock.jsx";
 import TitleProducts from "../Title/TitleProducts.jsx";
 import ProductFilter from "./ProductFilter.jsx";
+
 export default function ProductsCategory(props) {
   const [line, setLine] = useState(false);
   const [current, setCurrent] = useState(1);
-  let item = props.products.data?.map((e) => (
+  const [popularChoosenSorting, setPopularChoosenSorting] = useState("popular");
+  const [priceChoosenSorting, setPriceChoosenSorting] = useState("asc");
+
+  let products = [...(props.products.data ?? [])];
+
+  if (products.length) {
+    if (popularChoosenSorting === "popular") {
+      products = products.sort((a, b) => a.rating - b.rating).reverse();
+    }
+    if (popularChoosenSorting === "not popular") {
+      products = products.sort((a, b) => a.rating - b.rating);
+    }
+    if (priceChoosenSorting === "asc") {
+      products = products.sort((a, b) => a.price - b.price).reverse();
+    }
+    if (priceChoosenSorting === "desc") {
+      products = products.sort((a, b) => a.price - b.price);
+    }
+  }
+
+  const handleChangePopular = (value) => {
+    setPopularChoosenSorting(value);
+  };
+
+  const handleChangePrice = (value) => {
+    setPriceChoosenSorting(value);
+  };
+
+  let item = products?.map((e) => (
     <ProductItem
       id={e.id}
       key={e.id}
@@ -23,7 +52,7 @@ export default function ProductsCategory(props) {
     />
   ));
 
-  let itemLine = props.products.data?.map((e) => (
+  let itemLine = products?.map((e) => (
     <ProductItemLine
       id={e.id}
       key={e.id}
@@ -46,7 +75,10 @@ export default function ProductsCategory(props) {
       <div className={style.flexBetween}>
         <TitleProducts />
         <div className={style.sortFlex}>
-          <ProductSelectSort />
+          <ProductSelectSort
+            onChangePopular={handleChangePopular}
+            onChangePrice={handleChangePrice}
+          />
           <LineOrBlock line={line} setLine={setLine} />
         </div>
       </div>

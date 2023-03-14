@@ -18,7 +18,6 @@ export default function DetailProduct(props) {
         const currentFavoriteProduct = res.data.find(
           (favorite) => favorite.id === props.detail?.id
         );
-        console.log(currentFavoriteProduct);
         if (currentFavoriteProduct) {
           setIsFavorite(true);
         }
@@ -87,7 +86,7 @@ export default function DetailProduct(props) {
         <div className={style.item}>
           <div className={style.grabe}>
             <img src={star} className={style.icon} />
-            <div className={style.grabeText}>Нет оценок</div>
+            <div className={style.grabeText}>{props.detail?.rating}</div>
           </div>
           <div className={style.title}>{props.detail?.title}</div>
           {props.detail?.balanceStock !== null && (

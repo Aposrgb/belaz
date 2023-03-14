@@ -9,7 +9,7 @@ export default function BreadcrumbDetailProduct(props) {
         Каталог
       </NavLink>
       <div className={style.paste}> / </div>
-      <NavLink to="/catalog" className={style.link}>
+      <NavLink to={`/category/${props.detail?.categories.id}`} className={style.link}>
         {props.detail?.categories?.title}
       </NavLink>
       <div className={style.paste}> / </div>

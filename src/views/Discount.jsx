@@ -12,6 +12,8 @@ const Discount = (props) => {
     props.GetFilter();
   }, []);
 
+  console.log(props);
+
   useDisableScroll(props.availablesLoading);
 
   return (

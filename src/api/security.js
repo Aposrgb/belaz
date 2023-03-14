@@ -6,7 +6,7 @@ export const Autorize = (email, password) => {
     password: password,
   })
 };
-export const Registration = async (
+export const registration = async (
   email,
   password,
   name,
