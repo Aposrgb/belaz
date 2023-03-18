@@ -24,8 +24,7 @@ export default function ProductDetail(props) {
       <Search GetSearch={props.GetSearch} />
       <BreadcrumbDetailProduct detail={props.detail?.data} />
       <DetailProduct detail={props.detail.data} />
-      <Title title={"Мы рекомендуем"} arrow={true} link="/recommend" />
-      <Product products={props.recommend} />
+      
     </div>
   );
 }
