@@ -1,10 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 import style from "./Footer.module.scss";
 import logo from "../../assets/svg/logo.svg";
 import { NavLink } from "react-router-dom";
 import arrow from "../../assets/svg/arrow.svg";
+import { Modal } from "antd";
+import ModalFeedback from "../Modal/ModalFeedback";
 
 const Footer = (props) => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const showModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const handleCancel = () => {
+    setIsModalOpen(false);
+  };
+
   return (
     <div className={style.footer}>
       <div className={style.container}>
@@ -78,7 +90,17 @@ const Footer = (props) => {
           className={style.arrow}
         />
         <div className={style.itemLast}>
-          <div className={style.linkPhone}>Заказать звонок</div>
+          <div onClick={showModal} className={style.linkPhone}>
+            Заказать звонок
+          </div>
+          <Modal
+            onCancel={handleCancel}
+            visible={isModalOpen}
+            className={style.modal}
+            footer={false}
+          >
+            <ModalFeedback />
+          </Modal>
           <a className={style.phone}>+7 (343) 287-57-32</a>
           <a href="https://wa.me/79655327026" className={style.phone}>
             +7 (965) 532-70-26

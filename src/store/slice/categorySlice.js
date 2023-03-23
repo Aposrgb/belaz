@@ -1,5 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { GetCategoryProducts } from "../../api/category.js";
+
 const initialState = {
   category: [],
   isLoading: false,

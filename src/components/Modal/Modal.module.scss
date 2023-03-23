@@ -91,7 +91,7 @@
 }
 .form {
   @include fluid(padding-bottom, 20px, 30px);
-  border-bottom: 2px solid #cccccc;
+  // border-bottom: 2px solid #cccccc;
   border-radius: 2px;
 }
 .linkModal {

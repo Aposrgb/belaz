@@ -15,7 +15,7 @@ const ProductDiscount = (props) => {
   const [popularChoosenSorting, setPopularChoosenSorting] = useState("popular");
   const [priceChoosenSorting, setPriceChoosenSorting] = useState("asc");
 
-  let products = [...(props.availables.data ?? [])];
+  let products = [...(props.availables?.data ?? [])];
 
   if (products.length) {
     if (popularChoosenSorting === "popular") {
@@ -65,6 +65,9 @@ const ProductDiscount = (props) => {
       description={e.description}
     />
   ));
+  console.log("====================================");
+  console.log(props);
+  console.log("====================================");
   return (
     <>
       <div className={style.flexBetween}>
@@ -84,9 +87,8 @@ const ProductDiscount = (props) => {
           <ProductFilter
             current={current}
             setCurrent={setCurrent}
-            Function={props.GetAvailablesFiltered}
+            getFilter={props.GetAvailablesFiltered}
             filter={props.filter?.data}
-            GetFilter={props.GetFilter}
           />
         </div>
         <div className="cards">
@@ -95,7 +97,7 @@ const ProductDiscount = (props) => {
             Function={props.GetAvailables}
             current={current}
             setCurrent={setCurrent}
-            total={props.availables?.count}
+            total={props?.availables?.count}
           />
         </div>
       </div>

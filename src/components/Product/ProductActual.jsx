@@ -84,9 +84,9 @@ const ProductActual = (props) => {
           <ProductFilter
             current={current}
             setCurrent={setCurrent}
-            Function={props.GetActualFiltered}
+            getFilter={props.GetActualFiltered}
             filter={props.filter?.data}
-            GetFilter={props.GetFilter}
+            
           />
         </div>
         <div className="cards">

@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { GetProductsAll, GetProductsCategory } from "../../api/product.js";
+import { GetProductsAll, GetProductsCategory, getFilteredProducts } from "../../api/product.js";
 const initialState = {
   products: [],
   isLoading: false,
@@ -33,6 +33,30 @@ export const GetProducts = (page, limit, categoryId) => {
       dispatch(productsSlice.actions.successFetchProducts(response));
     } catch (e) {
       dispatch(productsSlice.actions.failureFetchProducts());
+    }
+  };
+};
+
+export const getProductsFiltered = (
+  page,
+  limit,
+  minPrice,
+  maxPrice,
+  categoryId
+) => {
+  return async (dispatch) => {
+    dispatch(productsSlice.actions.fetchProducts());
+    const response = await getFilteredProducts(
+      page,
+      limit,
+      minPrice,
+      maxPrice,
+      categoryId
+    );
+    try {
+      dispatch(productsSlice.actions.successFetchProducts(response));
+    } catch (e) {
+      productsSlice.actions.failureFetchProducts();
     }
   };
 };

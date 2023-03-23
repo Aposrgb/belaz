@@ -27,7 +27,7 @@ const ProductFilter = (props) => {
   const debouncedValue = useDebounce(inputValue, category, 700);
 
   useEffect(() => {
-    props.Function(props.current, 20, inputValue[0], inputValue[1], category);
+    props.getFilter(props.current, 20, inputValue[0], inputValue[1], category);
   }, [debouncedValue, props.current, category]);
 
   const onChange = (newValue) => {
@@ -50,7 +50,7 @@ const ProductFilter = (props) => {
         defaultValue={[1, 447031]}
         onChange={onChange}
       />
-      {props.filter?.categories.map((e) => (
+      {(props?.isUseSubCategory === undefined ? props?.filter?.categories : props.filter?.subCategories)?.map((e) => (
         <Checkbox
           id={e.id}
           key={e.id}

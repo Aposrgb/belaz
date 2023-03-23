@@ -52,9 +52,9 @@ const ProductRecomend = (props) => {
           <ProductFilter
             current={current}
             setCurrent={setCurrent}
-            Function={props.GetRecommendFiltered}
+            getFilter={props.GetRecommendFiltered}
             filter={props.filter?.data}
-            GetFilter={props.GetFilter}
+            
           />
         </div>
         <div className="cards">

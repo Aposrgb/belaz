@@ -87,9 +87,9 @@ const ProductPopular = (props) => {
           <ProductFilter
             current={current}
             setCurrent={setCurrent}
-            Function={props.GetPopularFiltered}
+            getFilter={props.GetPopularFiltered}
             filter={props.filter?.data}
-            GetFilter={props.GetFilter}
+            
           />
         </div>
         <div className="cards">

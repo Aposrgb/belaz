@@ -21,6 +21,7 @@ export default function Products(props) {
       <Search GetSearch={props.GetSearch} />
       <ProductsCategory
         GetCategory={props.GetCategory}
+        getProductsFiltered={props.getProductsFiltered}
         GetFilter={props.GetFilter}
         GetProducts={props.GetProducts}
         filter={props.filter}

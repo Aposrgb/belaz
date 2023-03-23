@@ -147,6 +147,48 @@ export const GetFilteredPopular = async (
     });
   }
 };
+
+export const getFilteredProducts = async (
+  page,
+  limit,
+  minPrice,
+  maxPrice,
+  subCategoryList
+) => {
+  if (subCategoryList.length === 0) {
+    return await Api.get(
+      "api/products?pagination[page]=" +
+        page +
+        "&pagination[limit]=" +
+        limit +
+        "&filter[minPrice]=" +
+        minPrice +
+        "&filter[maxPrice]=" +
+        maxPrice +
+        "&filter[isSubCategory]=true",
+      { RequestData: {} }
+    ).then((response) => {
+      return response.data;
+    });
+  } else {
+    return await Api.get(
+      "api/products?pagination[page]=" +
+        page +
+        "&pagination[limit]=" +
+        limit +
+        "&filter[minPrice]=" +
+        minPrice +
+        "&filter[maxPrice]=" +
+        maxPrice +
+        "&filter[isSubCategory]=true&search[subCategoryId]=" +
+        subCategoryList.join(","),
+      { RequestData: {} }
+    ).then((response) => {
+      return response.data;
+    });
+  }
+};
+
 export const GetFilteredRecommend = async (
   page,
   limit,

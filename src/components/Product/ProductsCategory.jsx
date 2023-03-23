@@ -70,6 +70,10 @@ export default function ProductsCategory(props) {
     props.GetProducts(current, 20, props.id);
   }, [current]);
 
+  console.log("====================================");
+  console.log(props);
+  console.log("====================================");
+
   return (
     <>
       <div className={style.flexBetween}>
@@ -83,6 +87,17 @@ export default function ProductsCategory(props) {
         </div>
       </div>
       <div className="product">
+        {props?.filter?.data && (
+          <div className="filter">
+            <ProductFilter
+              isUseSubCategory
+              current={current}
+              setCurrent={setCurrent}
+              getFilter={props.getProductsFiltered}
+              filter={props.filter?.data}
+            />
+          </div>
+        )}
         {props.products.data?.length === 0 ? (
           "В данной категории товары не найдены, уточняйте информацию у продавца"
         ) : (
