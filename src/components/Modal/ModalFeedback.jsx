@@ -1,14 +1,17 @@
 import React, { useState } from "react";
 import { Button, Modal } from "antd";
 import style from "./Modal.module.scss";
+import { Api } from "../../api/api";
 
 const ModalFeedback = () => {
   const handleSubmitPhone = (e) => {
     e.preventDefault();
     e.stopPropagation();
-
-    Api.post("api/feedback/" +  {
-      headers: { apiKey: token },
+    ``
+    Api.post(`/api/feedback/${e.target[0].value}`).then((res) => {
+      if (res.status === 200) {
+        location.reload();
+      }
     });
   };
 
@@ -25,7 +28,9 @@ const ModalFeedback = () => {
             className={style.inputItem}
           />
         </div>
-        <button className={style.btn}>Отправить</button>
+        <button type="submit" className={style.btn}>
+          Отправить
+        </button>
       </form>
     </div>
   );
