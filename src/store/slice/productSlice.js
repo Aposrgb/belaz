@@ -42,7 +42,8 @@ export const getProductsFiltered = (
   limit,
   minPrice,
   maxPrice,
-  categoryId
+  categoryId,
+  brandId,
 ) => {
   return async (dispatch) => {
     dispatch(productsSlice.actions.fetchProducts());
@@ -51,7 +52,8 @@ export const getProductsFiltered = (
       limit,
       minPrice,
       maxPrice,
-      categoryId
+      categoryId,
+      brandId
     );
     try {
       dispatch(productsSlice.actions.successFetchProducts(response));

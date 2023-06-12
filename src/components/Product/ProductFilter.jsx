@@ -7,28 +7,29 @@ import filter from "../../assets/svg/filter.svg";
 const ProductFilter = (props) => {
   const [inputValue, setInputValue] = useState([1, 447031]);
   const [category, setCategory] = useState([]);
+  const [brand, setBrand] = useState([]);
 
-  function useDebounce(inputValue, category, delay) {
-    const [debouncedValue, setDebouncedValue] = useState(inputValue, category);
+  function useDebounce(inputValue, category, brand, delay) {
+    const [debouncedValue, setDebouncedValue] = useState(inputValue, category, brand);
 
     useEffect(() => {
       const timer = setTimeout(
-        () => setDebouncedValue(inputValue, category),
+        () => setDebouncedValue(inputValue, category, brand),
         delay || 500
       );
 
       return () => {
         clearTimeout(timer);
       };
-    }, [inputValue, category, delay]);
+    }, [inputValue, category, brand, delay]);
 
     return debouncedValue;
   }
-  const debouncedValue = useDebounce(inputValue, category, 700);
+  const debouncedValue = useDebounce(inputValue, category, brand,  700);
 
   useEffect(() => {
-    props.getFilter(props.current, 20, inputValue[0], inputValue[1], category);
-  }, [debouncedValue, props.current, category]);
+    props.getFilter(props.current, 60, inputValue[0], inputValue[1], category, brand);
+  }, [debouncedValue, props.current, category, brand]);
 
   const onChange = (newValue) => {
     setInputValue(newValue);
@@ -63,6 +64,23 @@ const ProductFilter = (props) => {
           }}
         >
           {e.title}
+        </Checkbox>
+      ))}
+      <hr/>
+      <p>Бренды</p>
+      {(props?.filter?.brands)?.map((e) => (
+        <Checkbox
+          id={e.id}
+          key={e.id}
+          onClick={(value) => {
+            setBrand((brand) =>
+              !!value.target.checked
+                ? [...brand, e.id]
+                : brand.filter((brand) => brand !== e.id)
+            );
+          }}
+        >
+          {e.name}
         </Checkbox>
       ))}
     </div>

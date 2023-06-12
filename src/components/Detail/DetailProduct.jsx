@@ -178,7 +178,7 @@ export default function DetailProduct(props) {
         </div>
       </div>
       <div className={style.descriptionTitle}>Описание товара</div>
-      <div className={style.description}>{props.detail?.description}</div>
+      <div className={style.description} dangerouslySetInnerHTML={{__html:props.detail?.description}} ></div>
       <div className={style.feedbackTitle}>Отзывы</div>
       {!!comments.length && (
         <div className={style.commentCardList}>

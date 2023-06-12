@@ -153,7 +153,8 @@ export const getFilteredProducts = async (
   limit,
   minPrice,
   maxPrice,
-  subCategoryList
+  subCategoryList,
+  brands
 ) => {
   if (subCategoryList.length === 0) {
     return await Api.get(
@@ -165,7 +166,8 @@ export const getFilteredProducts = async (
         minPrice +
         "&filter[maxPrice]=" +
         maxPrice +
-        "&filter[isSubCategory]=true",
+        "&filter[isSubCategory]=true" + 
+        "&search[brand]=" + brands.join(','),
       { RequestData: {} }
     ).then((response) => {
       return response.data;
@@ -181,7 +183,8 @@ export const getFilteredProducts = async (
         "&filter[maxPrice]=" +
         maxPrice +
         "&filter[isSubCategory]=true&search[subCategoryId]=" +
-        subCategoryList.join(","),
+        subCategoryList.join(",") +
+        "&search[brand]=" + brands.join(','),
       { RequestData: {} }
     ).then((response) => {
       return response.data;
