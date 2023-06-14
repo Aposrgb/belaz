@@ -91,7 +91,7 @@ const OrderContainer = (props) => {
       },
       { headers: { apiKey: token } }
     ).then((res) => {
-      if (res.status === 200) {
+      if (res.status <= 204 && res.status >= 200) {
          navigate("/lk/order/");
       }
     });
