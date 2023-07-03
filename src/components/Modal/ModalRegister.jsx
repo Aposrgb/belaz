@@ -8,11 +8,12 @@ const ModalRegister = (props) => {
   const [surname, setSurname] = useState("");
   const [patronymic, setPatronymic] = useState("");
   const [phone, setPhone] = useState("");
+  const [isJuristic, setIsJuristic] = useState(false);
   const [errorText, setErrorText] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    registration(email, password, name, surname, patronymic, phone)
+    registration(email, password, name, surname, patronymic, phone, isJuristic)
       .then((res) => {
         if (res.data.token) {
           props.registrathion();
@@ -22,6 +23,11 @@ const ModalRegister = (props) => {
         setErrorText(error.response.data.message || error.response.data.detail);
       });
   };
+
+  const flexStyles = {
+    display: 'flex',
+    margin: '25px'
+  }
 
   return (
     <div>
@@ -125,6 +131,20 @@ const ModalRegister = (props) => {
             }}
             value={password}
             className={style.inputItem}
+          />
+        </div>
+        <div style={flexStyles}>
+          <label style={{marginRight: '20px', fontSize: '15px'}}for="isJuristic">
+Юридическое лицо
+          </label>
+          <input
+            id="isJuristic"
+            type="checkbox"
+            onChange={(e) => {
+              setIsJuristic(e.target.checked);
+              setErrorText("");
+            }}
+            value={isJuristic}
           />
         </div>
         {!!errorText.length && <p className={style.error}>{errorText}</p>}

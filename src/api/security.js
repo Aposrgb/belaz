@@ -12,7 +12,8 @@ export const registration = async (
   name,
   surname,
   patronymic,
-  phone
+  phone,
+  isJuristic
 ) => {
   const response = await Api.post("api/security/registration", {
     email: email,
@@ -21,6 +22,7 @@ export const registration = async (
     surname: surname,
     patronymic: patronymic,
     phone: phone,
+    isJuristic: isJuristic
   });
   return response.data;
 };
