@@ -6,7 +6,7 @@ import favorite from "../../assets/svg/favorite.svg";
 import favoriteRed from "../../assets/svg/favorite-red.svg";
 import picture from "../../assets/images/nullPicture.png";
 import { useNavigate } from "react-router-dom";
-import { Api } from "../../api/api";
+import baseUrl, { Api } from "../../api/api";
 
 const ProductItem = (props) => {
   const navigate = useNavigate();
@@ -58,7 +58,7 @@ const ProductItem = (props) => {
       <div className={style.contain}>
         <img
           src={
-            props.img === null ? picture : "https://agregatekb.ru/" + props.img
+            props.img === null ? picture : baseUrl + props.img
           }
           className={style.productImg}
           alt="product"

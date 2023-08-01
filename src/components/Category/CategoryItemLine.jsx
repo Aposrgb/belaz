@@ -1,12 +1,13 @@
 import React from "react";
 import style from "./Category.module.scss";
 import { NavLink } from "react-router-dom";
+import baseUrl from "../../api/api.js";
 
 const CategoryItemLine = (props) => {
   return (
     <div className={style.cardLine}>
       <img
-        src={props.img === null ? picture : "https://agregatekb.ru/" + props.img}
+        src={props.img === null ? picture : baseUrl + props.img}
         className={style.imgLong}
         alt="img"
       />

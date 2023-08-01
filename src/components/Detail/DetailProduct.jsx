@@ -4,7 +4,7 @@ import Counter from "../Counter/Counter.jsx";
 import star from "../../assets/svg/star.svg";
 import notFavorite from "../../assets/svg/favorite.svg";
 import favorite from "../../assets/svg/favorite-red.svg";
-import { Api } from "../../api/api";
+import baseUrl, { Api } from "../../api/api";
 import { AllProductsFavorite } from "../../api/favorite";
 import { Rating } from "react-simple-star-rating";
 import avatar from "../../assets/images/avatar.png";
@@ -126,7 +126,7 @@ export default function DetailProduct(props) {
       <div className={style.flex}>
         <img
           className={style.img}
-          src={"https://agregatekb.ru/" + props.detail?.img}
+          src={baseUrl + props.detail?.img}
         />
         <div className={style.item}>
           <div className={style.grabe}>

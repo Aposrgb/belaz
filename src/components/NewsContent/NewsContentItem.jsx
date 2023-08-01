@@ -2,6 +2,7 @@ import React from "react";
 import style from "./NewsContent.module.scss";
 import share from "../../assets/svg/share.svg";
 import { NavLink } from "react-router-dom";
+import baseUrl from "../../api/api.js";
 const NewsContentItem = (props) => {
   const [year, mounth, day] = props.createdAt.split("T")[0].split("-");
 
@@ -10,7 +11,7 @@ const NewsContentItem = (props) => {
       <img
         className={style.img}
         alt="newsPhoto"
-        src={"https://agregatekb.ru/" + props.img}
+        src={baseUrl + props.img}
       />
       <div className={style.info}>
         <div className={style.titleNews}>{props.name}</div>

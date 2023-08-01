@@ -5,7 +5,7 @@ import buy from "../../assets/svg/buy.svg";
 import favorite from "../../assets/svg/favorite.svg";
 import favoriteRed from "../../assets/svg/favorite-red.svg";
 import picture from "../../assets/images/nullPicture.png";
-import { Api } from "../../api/api";
+import baseUrl, { Api } from "../../api/api";
 import { useNavigate } from "react-router-dom";
 
 const ProductItemLine = (props) => {
@@ -59,7 +59,7 @@ const ProductItemLine = (props) => {
         <img
           alt="product"
           src={
-            props.img === null ? picture : "https://agregatekb.ru/" + props.img
+            props.img === null ? picture : baseUrl + props.img
           }
           className={style.lineImg}
         />

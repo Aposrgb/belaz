@@ -3,6 +3,7 @@ import style from "./NewsDetails.module.scss";
 import ContactsMin from "../ContactsMini/ContactsMin.jsx";
 import AskMini from "../AskMini/AskMini.jsx";
 import LinkMini from "../LinkMini/LinkMini.jsx";
+import baseUrl from "../../api/api.js";
 const NewsDetailItem = (props) => {
   const year = new Date(Date.parse(props.detail?.createdAt)).getFullYear();
   const mounth = new Date(Date.parse(props.detail?.createdAt)).getMonth();
@@ -12,7 +13,7 @@ const NewsDetailItem = (props) => {
     <div className={style.container}>
       <div className={style.bunner}>
         <img
-          src={"https://agregatekb.ru/" + props.detail?.img}
+          src={baseUrl + props.detail?.img}
           className={style.bannerImg}
         />
         <div className={style.bannerTitle}>{props.detail?.name}</div>
